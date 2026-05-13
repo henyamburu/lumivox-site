@@ -1,0 +1,6 @@
+title: Lumivox
+url: "https://lumivox.one"
+baseurl: ""
+description: "Smart living systems that connect wearable data with your home environment."
+markdown: kramdown
+permalink: pretty

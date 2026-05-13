@@ -1,0 +1,20 @@
+<nav>
+  <a class="logo" href="{{ '/' | relative_url }}" aria-label="Lumivox Home">Lumivox</a>
+
+  <div class="nav-links">
+    <a class="{% if page.nav == 'home' %}active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+    <a class="{% if page.nav == 'sleep' %}active{% endif %}" href="{{ '/sleep-system/' | relative_url }}">Sleep System</a>
+    <a class="{% if page.nav == 'about' %}active{% endif %}" href="{{ '/about/' | relative_url }}">About</a>
+    <a class="nav-cta plausible-event-name=Nav+CTA+Click" href="{{ '/sleep-system/' | relative_url }}">Start Your First System</a>
+  </div>
+
+  <button class="hbg" id="mobile-menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mob" id="mobile-menu">
+  <a href="{{ '/' | relative_url }}">Home</a>
+  <a href="{{ '/sleep-system/' | relative_url }}">Sleep System</a>
+  <a href="{{ '/about/' | relative_url }}">About</a>
+</div>
