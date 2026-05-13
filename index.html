@@ -69,18 +69,15 @@ nav: home
       <span class="eyebrow">Watch the Concept</span>
       <h2>How Lumivox turns sleep data into a smarter home routine</h2>
       <p class="lead" style="margin-top:16px;">
-        A short walkthrough showing how wearable data, smart lights, and simple automation work together.
+        A quick walkthrough of how wearable data, smart lights, and simple automation work together.
       </p>
-      <div class="video-actions">
-        <a class="btn btn-outline plausible-event-name=Video+Click" href="{{ '/assets/videos/lumivox-overview.mp4' | relative_url }}" target="_blank" rel="noopener">Open video →</a>
-      </div>
     </div>
 
-    <div class="video-card">
-      <video id="video-home-overview" data-track-name="Home Overview" controls preload="metadata">
-        <source src="{{ '/assets/videos/lumivox-overview.mp4' | relative_url }}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <div>
+      {% include youtube-embed.html 
+        id="eFbfsSjhQSM" 
+        title="Lumivox Smart Living Overview"
+        watch_url="https://www.youtube.com/watch?v=eFbfsSjhQSM" %}
     </div>
   </div>
 </section>
