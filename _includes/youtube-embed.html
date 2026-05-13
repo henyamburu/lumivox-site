@@ -1,0 +1,20 @@
+<div class="video-card">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/{{ include.id }}"
+    title="{{ include.title }}"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+{% if include.watch_url %}
+  <a
+    class="btn btn-outline plausible-event-name=Video+Click"
+    href="{{ include.watch_url }}"
+    target="_blank"
+    rel="noopener"
+    style="margin-top:18px;">
+    Watch on YouTube →
+  </a>
+{% endif %}
