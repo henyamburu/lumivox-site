@@ -84,16 +84,13 @@ permalink: /sleep-system/
       <p class="lead" style="margin-top:16px;">
         Watch how the wearable, lights, and smart plug work together to support a better night routine and a smoother morning.
       </p>
-      <div class="video-actions">
-        <a class="btn btn-outline plausible-event-name=Video+Click" href="{{ '/assets/videos/sleep-system-demo.mp4' | relative_url }}" target="_blank" rel="noopener">Open demo video →</a>
-      </div>
     </div>
 
-    <div class="video-card">
-      <video id="video-sleep-demo" data-track-name="Sleep System Demo" controls preload="metadata">
-        <source src="{{ '/assets/videos/sleep-system-demo.mp4' | relative_url }}" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
+    <div>
+      {% include youtube-embed.html 
+        id="rB1pb_Lt2Jk" 
+        title="Lumivox Sleep System Demo"
+        watch_url="https://www.youtube.com/watch?v=rB1pb_Lt2Jk" %}
     </div>
   </div>
 </section>
