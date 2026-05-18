@@ -482,17 +482,17 @@
 
   <nav class="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">A<span>Caring</span> Adult Home</a>
+      <a href="#" class="nav-logo" data-track="nav_click" data-track-id="acah_nav_logo_home" data-category="navigation" data-label="ACAH logo home">A<span>Caring</span> Adult Home</a>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#daily-life">Daily Life</a></li>
-        <li><a href="#care-fit">Care Fit</a></li>
-        <li><a href="#admissions">Admissions</a></li>
-        <li><a href="#events">Updates</a></li>
-        <li><a href="#location">Location</a></li>
+        <li><a href="#home" data-track="nav_click" data-track-id="acah_nav_home" data-category="navigation" data-label="ACAH Home nav">Home</a></li>
+        <li><a href="#daily-life" data-track="nav_click" data-track-id="acah_nav_daily_life" data-category="navigation" data-label="ACAH Daily Life nav">Daily Life</a></li>
+        <li><a href="#care-fit" data-track="nav_click" data-track-id="acah_nav_care_fit" data-category="navigation" data-label="ACAH Care Fit nav">Care Fit</a></li>
+        <li><a href="#admissions" data-track="nav_click" data-track-id="acah_nav_admissions" data-category="navigation" data-label="ACAH Admissions nav">Admissions</a></li>
+        <li><a href="#events" data-track="nav_click" data-track-id="acah_nav_updates" data-category="navigation" data-label="ACAH Updates nav">Updates</a></li>
+        <li><a href="#location" data-track="nav_click" data-track-id="acah_nav_location" data-category="navigation" data-label="ACAH Location nav">Location</a></li>
       </ul>
-      <a href="#contact" class="nav-cta">Ask About Availability</a>
-      <button class="nav-mobile-btn" aria-label="Open menu" onclick="toggleMenu()">
+      <a href="#contact" class="nav-cta" data-track="cta_click" data-track-id="acah_nav_ask_availability" data-category="cta" data-label="ACAH nav - Ask About Availability">Ask About Availability</a>
+      <button class="nav-mobile-btn" aria-label="Open menu" onclick="toggleMenu()" data-track="menu_click" data-track-id="acah_mobile_menu_toggle" data-category="navigation" data-label="ACAH mobile menu toggle">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -507,8 +507,8 @@
           ACaring Adult Home provides a smaller, family-style residential setting for adults who need supervision, personal care, meals, routines, and a safe place to belong.
         </p>
         <div class="hero-btns">
-          <a href="#contact" class="btn-primary">Ask About Availability →</a>
-          <a href="#location" class="btn-outline">View Location</a>
+          <a href="#contact" class="btn-primary" data-track="cta_click" data-track-id="acah_hero_ask_availability" data-category="cta" data-label="ACAH hero - Ask About Availability">Ask About Availability →</a>
+          <a href="#location" class="btn-outline" data-track="cta_click" data-track-id="acah_hero_view_location" data-category="cta" data-label="ACAH hero - View Location">View Location</a>
         </div>
         <div class="hero-note">
           <span>✓</span>
@@ -671,15 +671,15 @@
 
       <div class="tabs-wrap">
         <div class="tab-buttons" role="tablist" aria-label="Care fit guide">
-          <button class="tab-btn active" data-tab="developmental" role="tab">
+          <button class="tab-btn active" data-tab="developmental" role="tab" data-track="tab_click" data-track-id="acah_tab_developmental_support" data-category="care_fit_tabs" data-label="Developmental disability support tab">
             <strong>Developmental disability support</strong>
             <span>Routine, supervision, personal care, and dignity.</span>
           </button>
-          <button class="tab-btn" data-tab="dementia" role="tab">
+          <button class="tab-btn" data-tab="dementia" role="tab" data-track="tab_click" data-track-id="acah_tab_dementia_support" data-category="care_fit_tabs" data-label="Dementia support tab">
             <strong>Dementia-related support</strong>
             <span>Calm structure, reminders, safety awareness.</span>
           </button>
-          <button class="tab-btn" data-tab="daily" role="tab">
+          <button class="tab-btn" data-tab="daily" role="tab" data-track="tab_click" data-track-id="acah_tab_daily_living_support" data-category="care_fit_tabs" data-label="Daily living support tab">
             <strong>Daily living support</strong>
             <span>Meals, medication assistance, laundry, hygiene.</span>
           </button>
@@ -767,7 +767,7 @@
           <div class="announcement-date">Current announcement</div>
           <h3>Now accepting new resident inquiries</h3>
           <p>We welcome inquiries from families, guardians, case managers, placement coordinators, and discharge planners looking for Adult Family Home care in Federal Way.</p>
-          <a href="#contact" class="btn-light">Submit a Referral or Question</a>
+          <a href="#contact" class="btn-light" data-track="cta_click" data-track-id="acah_announcement_submit_referral" data-category="cta" data-label="ACAH announcement - Submit Referral or Question">Submit a Referral or Question</a>
         </article>
         <article class="announcement">
           <div class="announcement-date">Upcoming</div>
@@ -842,7 +842,7 @@
               <option>Planning ahead</option>
             </select>
             <textarea class="form-textarea" name="care_needs" placeholder="Brief description of care needs"></textarea>
-            <button type="submit" class="form-submit">Submit Inquiry →</button>
+            <button type="submit" class="form-submit" data-track="form_submit_click" data-track-id="acah_contact_submit_inquiry" data-category="form" data-label="ACAH contact form submit">Submit Inquiry →</button>
             <p class="form-note">This form is for general inquiries only and should not be used for emergencies or urgent medical needs. Replace this demo form action with Google Forms, Formspree, Netlify Forms, or another form handler before launch.</p>
           </form>
         </div>
@@ -887,16 +887,16 @@
         <div>Federal Way, Washington · Adult Family Home</div>
       </div>
       <div>
-        <a href="#daily-life">Daily Life</a>
-        <a href="#care-fit">Care Fit</a>
-        <a href="#contact">Contact</a>
+        <a href="#daily-life" data-track="footer_click" data-track-id="acah_footer_daily_life" data-category="footer_navigation" data-label="ACAH footer Daily Life">Daily Life</a>
+        <a href="#care-fit" data-track="footer_click" data-track-id="acah_footer_care_fit" data-category="footer_navigation" data-label="ACAH footer Care Fit">Care Fit</a>
+        <a href="#contact" data-track="footer_click" data-track-id="acah_footer_contact" data-category="footer_navigation" data-label="ACAH footer Contact">Contact</a>
       </div>
     </div>
   </footer>
 
   <div class="sticky-mobile-cta" aria-label="Quick contact buttons">
-    <a href="#contact">Ask Availability</a>
-    <a href="tel:+1">Call</a>
+    <a href="#contact" data-track="cta_click" data-track-id="acah_sticky_ask_availability" data-category="sticky_mobile_cta" data-label="ACAH sticky Ask Availability">Ask Availability</a>
+    <a href="tel:+1" data-track="phone_click" data-track-id="acah_sticky_call" data-category="sticky_mobile_cta" data-label="ACAH sticky Call">Call</a>
   </div>
 
   <script>
@@ -922,5 +922,9 @@
       btn.disabled = true;
     }
   </script>
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b942e39c3ad64cacb2e4cc13e9fcd9ae"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+  <script src="/assets/js/analytics.js" defer></script>
 </body>
 </html>

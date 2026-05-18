@@ -9,9 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 
-  <!-- Plausible Analytics -->
-  <script defer data-domain="lumivox.one" src="https://plausible.io/js/script.js"></script>
-
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
@@ -24,5 +21,9 @@
   {% include footer.html %}
 
   <script src="{{ '/assets/js/main.js' | relative_url }}" defer></script>
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b942e39c3ad64cacb2e4cc13e9fcd9ae"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+  <script src="/assets/js/analytics.js" defer></script>
 </body>
 </html>
