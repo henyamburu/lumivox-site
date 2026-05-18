@@ -1,25 +1,32 @@
-<div class="video-card">
-  <iframe
-    src="https://www.youtube-nocookie.com/embed/{{ include.id }}"
-    title="{{ include.title }}"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen>
-  </iframe>
+<div class="video-embed-wrap">
+  <div class="video-card">
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/{{ include.id }}"
+      title="{{ include.title }}"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="video-caption">
+    <span class="video-caption-dot"></span>
+    <span class="video-caption-text">{{ include.title }}</span>
+  </div>
 </div>
 
 {% if include.watch_url %}
-  <a
-    class="btn btn-outline plausible-event-name=Video+Click"
-    href="{{ include.watch_url }}"
-    data-track="video_click"
-    data-track-id="video_watch_youtube_{{ include.id }}"
-    data-category="video"
-    data-label="{{ include.title }}"
-    data-destination="{{ include.watch_url }}"
-    target="_blank"
-    rel="noopener"
-    style="margin-top:18px;">
-    Watch on YouTube →
-  </a>
+  <div class="video-actions">
+    <a
+      class="btn btn-outline plausible-event-name=Video+Click"
+      href="{{ include.watch_url }}"
+      data-track="video_click"
+      data-track-id="video_watch_youtube_{{ include.id }}"
+      data-category="video"
+      data-label="{{ include.title }}"
+      data-destination="{{ include.watch_url }}"
+      target="_blank"
+      rel="noopener">
+      Watch on YouTube →
+    </a>
+  </div>
 {% endif %}
