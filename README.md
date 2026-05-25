@@ -32,6 +32,13 @@ https://lumivox.one
 │   │   └── analytics.js       # Button/link click-tracking layer
 │   └── videos/
 │       └── README.md          # Notes for optional video assets
+├── go/                        # Product redirect pages for Phase 1 click-path tracking
+│   ├── sleep-tracker/
+│   ├── smart-bulbs/
+│   └── smart-plug/
+├── AFFILIATE_LINKS.md         # Hybrid affiliate and metrics plan
+├── LANE5_ROADMAP.md           # Lane 5 status, QA, and next steps
+├── METRICS_WEEKLY_TEMPLATE.csv # Weekly Cloudflare metrics capture template
 ├── TRACKING.md                # Tracking implementation notes
 └── README.md                  # This file
 ```
@@ -69,6 +76,8 @@ Cloudflare Web Analytics is currently included in the shared layout:
 The same Cloudflare beacon is also included in the standalone `acah.html` page.
 
 Cloudflare Web Analytics tracks page-level behavior such as visits, pages, referrers, and performance. It does not currently provide full custom button-event reporting by itself.
+
+For Phase 1 product-click measurement, product CTAs route through `/go/.../` redirect pages. Cloudflare can then count visits to product-interest paths such as `/go/smart-bulbs/` before the user is redirected to the vendor page.
 
 ## Button and link tracking
 
@@ -136,24 +145,32 @@ page
 link_text
 ```
 
-## Affiliate link placeholders
+## Product redirect and affiliate link setup
 
-The product buttons still use placeholder affiliate links. Search the project for:
+The Sleep System product buttons now point to stable internal redirect paths instead of raw vendor URLs:
 
 ```text
-REPLACE_WITH_AFFILIATE_LINK_WEARABLE
-REPLACE_WITH_AFFILIATE_LINK_SMART_BULBS
-REPLACE_WITH_AFFILIATE_LINK_SMART_PLUG
+/go/sleep-tracker/
+/go/smart-bulbs/
+/go/smart-plug/
 ```
 
-Replace each placeholder with the correct affiliate URL before sending traffic to the product page.
+These pages currently redirect to live-safe non-affiliate vendor/product pages so the buttons are no longer broken. When Lumivox receives approved affiliate links, update the destination inside each `/go/.../index.html` file. Do not replace the public Sleep System button URLs with long affiliate URLs.
 
-Suggested convention:
+Current map:
+
+| Product path | Current destination | Update later with |
+|---|---|---|
+| `/go/sleep-tracker/` | Fitbit Inspire 3 product page | Amazon Associates, Fitbit/retailer, Best Buy, Walmart, or approved network affiliate link |
+| `/go/smart-bulbs/` | Govee Smart A19 LED Bulbs product page | Govee affiliate link first, Amazon fallback |
+| `/go/smart-plug/` | Kasa Smart EP25 product page | Amazon Associates, Best Buy/Walmart, or Kasa/TP-Link network affiliate link |
+
+For the full affiliate and metrics plan, see:
 
 ```text
-Wearable:      REPLACE_WITH_AFFILIATE_LINK_WEARABLE
-Smart bulbs:   REPLACE_WITH_AFFILIATE_LINK_SMART_BULBS
-Smart plug:    REPLACE_WITH_AFFILIATE_LINK_SMART_PLUG
+AFFILIATE_LINKS.md
+LANE5_ROADMAP.md
+METRICS_WEEKLY_TEMPLATE.csv
 ```
 
 ## YouTube video embeds
@@ -246,12 +263,13 @@ Use this structure to avoid repeat work:
 
 ## Next recommended steps
 
-1. Replace all affiliate placeholders with real affiliate links.
+1. Deploy the `/go/.../` redirect pages and confirm the three product buttons no longer 404.
 2. Confirm every major CTA has a unique `data-track-id`.
 3. Push the updated site to GitHub.
 4. Test live clicks in the browser console.
-5. Keep Cloudflare Web Analytics for free traffic validation.
-6. Add Cloudflare Zaraz, GA4, or Plausible later only when deeper conversion reporting is needed.
+5. Confirm Cloudflare Web Analytics shows page views for `/sleep-system/` and `/go/.../` product paths.
+6. Apply to broad affiliate programs once the site is live and polished; use `/go/.../` metrics to support direct brand outreach later.
+7. Add Cloudflare Zaraz, GA4, or Plausible later only when deeper conversion reporting is needed.
 
 ## Important note
 
