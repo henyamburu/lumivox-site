@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<article class="article-page">
+  <header class="article-hero">
+    <div class="article-inner">
+      <a class="article-back" href="{{ '/guides/' | relative_url }}" data-track="content_cta" data-track-id="article_back_to_guides" data-category="content" data-label="Article - Back to guides">Guides</a>
+      <span class="eyebrow">{{ page.eyebrow }}</span>
+      <h1>{{ page.heading | default: page.title }}</h1>
+      <p class="lead">{{ page.intro }}</p>
+    </div>
+  </header>
+
+  <div class="article-body article-inner">
+    {{ content }}
+  </div>
+
+  <section class="article-next">
+    <div class="article-inner">
+      <span class="eyebrow">Next Step</span>
+      <h2>Build the beginner Sleep System</h2>
+      <p class="lead">See how a wearable, smart bulbs, and a smart plug can fit into one practical routine.</p>
+      <a class="btn btn-dark" href="{{ '/sleep-system/' | relative_url }}" data-track="content_cta" data-track-id="article_bottom_sleep_system" data-category="content" data-label="Article bottom CTA - View Sleep System">View Sleep System</a>
+    </div>
+  </section>
+</article>

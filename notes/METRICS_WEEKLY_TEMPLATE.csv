@@ -1,2 +1,2 @@
-week_start,total_visits,unique_visitors,top_referrer,sleep_system_page_views,go_sleep_tracker_views,go_smart_bulbs_views,go_smart_plug_views,best_product_ctr,notes
-YYYY-MM-DD,,,,,,,,,
+week_start,total_visits,unique_visitors,top_referrer,sleep_system_page_views,go_sleep_tracker_views,go_sleep_tracker_google_store_views,go_sleep_tracker_amazon_views,go_sleep_tracker_retailers_views,go_smart_bulbs_views,go_smart_plug_views,best_product_ctr,notes
+YYYY-MM-DD,,,,,,,,,,,,

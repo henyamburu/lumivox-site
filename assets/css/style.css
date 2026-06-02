@@ -415,6 +415,80 @@ footer {
 .footer-links a:hover { color: var(--ink); }
 .footer-copy { font-size: 13px; color: var(--ink-30); }
 
+/* --- ERROR PAGE ---------------------------------------------------------- */
+.error-page {
+  min-height: calc(100vh - 64px);
+  display: grid;
+  place-items: center;
+  padding: 80px 6%;
+  background: var(--off);
+}
+.error-card {
+  width: min(100%, 680px);
+  padding: clamp(32px, 6vw, 64px);
+  border: 1px solid var(--border);
+  border-radius: var(--r-xl);
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+}
+.error-card h1 { margin-bottom: 18px; }
+.error-card .lead { max-width: 560px; }
+.error-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+
+/* --- GUIDES -------------------------------------------------------------- */
+.guides-hero {
+  padding: 112px 6% 88px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+.guides-hero h1 { max-width: 820px; }
+.guides-hero .lead { max-width: 660px; margin-top: 20px; }
+.guides-list { padding: 88px 6%; background: var(--off); }
+.guides-intro { max-width: 680px; margin-bottom: 36px; }
+.guides-intro .lead { margin-top: 14px; }
+.guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.guide-card {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 26px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+.guide-card-featured { border-color: rgba(74,120,240,.28); }
+.guide-status {
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.guide-card p { margin: 12px 0 20px; color: var(--ink-60); font-size: 14px; font-weight: 300; line-height: 1.7; }
+.guide-card a { margin-top: auto; color: var(--accent); font-size: 14px; font-weight: 600; text-decoration: none; }
+.guide-card a:hover { color: var(--accent-dark); }
+
+/* --- ARTICLES ------------------------------------------------------------ */
+.article-hero { padding: 96px 6% 64px; background: var(--off); border-bottom: 1px solid var(--border); }
+.article-inner { width: min(100%, 760px); margin: 0 auto; }
+.article-back { display: inline-flex; margin-bottom: 28px; color: var(--ink-60); font-size: 14px; text-decoration: none; }
+.article-back:hover { color: var(--accent); }
+.article-back::before { content: '<'; margin-right: 8px; }
+.article-hero .lead { margin-top: 18px; }
+.article-body { padding: 72px 0; }
+.article-body section + section { margin-top: 48px; }
+.article-body h2 { margin-bottom: 14px; font-size: clamp(24px, 3vw, 34px); }
+.article-body h3 { margin: 28px 0 10px; }
+.article-body p, .article-body li { color: var(--ink-60); font-size: 16px; font-weight: 300; line-height: 1.82; }
+.article-body p + p { margin-top: 16px; }
+.article-body ul, .article-body ol { margin: 16px 0 0 22px; }
+.article-disclosure { margin-top: 52px; padding: 18px; border: 1px solid var(--border); border-radius: var(--r-md); background: var(--off); color: var(--ink-60); font-size: 13px; line-height: 1.65; }
+.article-next { padding: 64px 6%; border-top: 1px solid var(--border); background: var(--off); }
+.article-next .lead { margin: 14px 0 24px; }
+
 /* ═══════════════════════════════
    RESPONSIVE — Tablet ≤880px
 ═══════════════════════════════ */
@@ -492,6 +566,13 @@ footer {
   .video-card { border-radius: var(--r-md); }
 
   footer { padding: 32px 4.5%; }
+  .error-page { padding: 48px 4.5%; }
+  .error-actions { display: grid; }
+  .guides-hero, .guides-list { padding-left: 4.5%; padding-right: 4.5%; }
+  .guide-grid { grid-template-columns: 1fr; }
+  .guide-card { min-height: 0; }
+  .article-hero, .article-next { padding-left: 4.5%; padding-right: 4.5%; }
+  .article-body { width: auto; margin-left: 4.5%; margin-right: 4.5%; }
 }
 
 /* ═══════════════════════════════

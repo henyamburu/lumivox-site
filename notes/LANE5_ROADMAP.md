@@ -9,7 +9,7 @@ Lane 5 turns the polished Lumivox website into a measurable affiliate-ready webs
 | Workstream | Status | Notes |
 |---|---:|---|
 | Product placeholder links | Done | Sleep System product buttons now point to `/go/.../` paths instead of broken placeholders |
-| `/go/` redirect pages | Done | Added sleep tracker, smart bulbs, and smart plug redirect pages |
+| `/go/` product paths | Done / verify after deploy | Added a region-safe sleep tracker options page, distinct retailer-selection paths, plus smart bulbs and smart plug redirect pages |
 | Cloudflare page-level tracking | Done / verify after deploy | Cloudflare beacon exists on main layout and redirect pages |
 | Custom button-event analytics | Deferred | Current setup logs events in console and prepares for Zaraz/GA4/Plausible later |
 | Real affiliate links | Pending account approval | Current redirect destinations are live-safe non-affiliate product/vendor pages |
@@ -24,11 +24,15 @@ Lane 5 turns the polished Lumivox website into a measurable affiliate-ready webs
    - View Product → Smart Plug
    - Bottom CTA buttons for the same three categories
 3. Confirm each opens the correct `/go/.../` page.
+   - For sleep trackers, confirm each retailer choice visits its own measurable `/go/.../` path before redirecting.
 4. Confirm each redirects to the destination vendor/product page.
 5. Open DevTools → Network and confirm `beacon.min.js` loads.
 6. Review Cloudflare Web Analytics after traffic lands and look for:
    - `/sleep-system/`
    - `/go/sleep-tracker/`
+   - `/go/sleep-tracker-google-store/`
+   - `/go/sleep-tracker-amazon/`
+   - `/go/sleep-tracker-retailers/`
    - `/go/smart-bulbs/`
    - `/go/smart-plug/`
 
@@ -52,6 +56,9 @@ Use the live domain, not only local preview:
 ```text
 https://lumivox.one/sleep-system/
 https://lumivox.one/go/sleep-tracker/
+https://lumivox.one/go/sleep-tracker-google-store/
+https://lumivox.one/go/sleep-tracker-amazon/
+https://lumivox.one/go/sleep-tracker-retailers/
 https://lumivox.one/go/smart-bulbs/
 https://lumivox.one/go/smart-plug/
 ```
