@@ -15,7 +15,6 @@ https://lumivox.one
 ├── index.html                 # Home page
 ├── sleep-system.html          # Sleep System page
 ├── about.html                 # About page
-├── acah.html                  # Standalone legacy / separate page included in this package
 ├── CNAME                      # Custom domain: lumivox.one
 ├── _config.yml                # GitHub Pages / Jekyll configuration
 ├── _layouts/
@@ -24,6 +23,10 @@ https://lumivox.one
 │   ├── nav.html               # Shared navigation
 │   ├── footer.html            # Shared footer
 │   └── youtube-embed.html     # Reusable YouTube embed block
+├── guides/
+│   └── index.html             # Guide and article hub
+├── _templates/
+│   └── article-page.html      # Starter file for new guide pages
 ├── assets/
 │   ├── css/
 │   │   └── style.css          # Main site styling
@@ -50,7 +53,7 @@ https://lumivox.one
 | Home | `/` | Main Lumivox brand introduction and overview |
 | Sleep System | `/sleep-system/` | Product-stack page for the sleep system under $250 |
 | About | `/about/` | Brand purpose and positioning |
-| ACAH | `/acah.html` | Standalone page included in the package; not part of the main Lumivox navigation |
+| Guides | `/guides/` | Article hub and beginner-content entry point |
 
 ## Reusable blocks
 
@@ -62,6 +65,7 @@ The site uses Jekyll includes so common sections do not need to be edited repeat
 | `_includes/nav.html` | Desktop and mobile navigation |
 | `_includes/footer.html` | Footer links and site closing section |
 | `_includes/youtube-embed.html` | Reusable YouTube embed card |
+| `_layouts/article.html` | Shared article structure, recovery link, and Sleep System CTA |
 
 When changing the navigation or footer, update the include file once instead of editing every page.
 
@@ -73,11 +77,9 @@ Cloudflare Web Analytics is currently included in the shared layout:
 <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "b942e39c3ad64cacb2e4cc13e9fcd9ae"}'></script>
 ```
 
-The same Cloudflare beacon is also included in the standalone `acah.html` page.
-
 Cloudflare Web Analytics tracks page-level behavior such as visits, pages, referrers, and performance. It does not currently provide full custom button-event reporting by itself.
 
-For Phase 1 product-click measurement, product CTAs route through `/go/.../` redirect pages. Cloudflare can then count visits to product-interest paths such as `/go/smart-bulbs/` before the user is redirected to the vendor page.
+For Phase 1 product-click measurement, product CTAs route through `/go/.../` pages. Cloudflare can then count visits to product-interest paths such as `/go/smart-bulbs/` before the user is redirected to the vendor page. Option pages also route each outbound choice through a distinct `/go/.../` path so retailer selections can be counted manually.
 
 ## Button and link tracking
 
@@ -105,6 +107,11 @@ The tracking script lives here:
 
 It listens for clicks on any element with `data-track` and sends a payload to the browser console. It is also prepared to forward events to Cloudflare Zaraz or GA4 later if either tool is added.
 
+The site deliberately keeps two tracking layers:
+
+1. Cloudflare-visible `/go/.../` page views for manual counting now.
+2. Unique `data-track-id` attributes for event-level reporting when Zaraz, GA4, Plausible, or another analytics service is enabled later.
+
 Current tracked event groups include:
 
 | Event | Purpose |
@@ -114,9 +121,6 @@ Current tracked event groups include:
 | `video_click` | YouTube watch buttons |
 | `affiliate_click` | Product and affiliate link clicks |
 | `menu_click` | Mobile menu toggle clicks |
-| `phone_click` | Telephone link clicks |
-| `form_submit_click` | Form submit buttons on the standalone ACAH page |
-| `tab_click` | Tab interactions on the standalone ACAH page |
 
 For more detail, see:
 
@@ -126,7 +130,21 @@ TRACKING.md
 
 ## Testing tracking locally
 
-Open the site in a browser, then open DevTools → Console.
+Start the local preview server:
+
+```powershell
+node tools/local-preview-server.js
+```
+
+Then open:
+
+```text
+http://127.0.0.1:4173
+```
+
+The preview server renders the Jekyll layout and includes from the current working tree, so you can test uncommitted changes before pushing to GitHub Pages. Keep the server running while testing; page refreshes render the latest saved files.
+
+Open DevTools → Console.
 
 Click a tracked button. You should see a console message like:
 
@@ -151,17 +169,23 @@ The Sleep System product buttons now point to stable internal redirect paths ins
 
 ```text
 /go/sleep-tracker/
+/go/sleep-tracker-google-store/
+/go/sleep-tracker-amazon/
+/go/sleep-tracker-retailers/
 /go/smart-bulbs/
 /go/smart-plug/
 ```
 
-These pages currently redirect to live-safe non-affiliate vendor/product pages so the buttons are no longer broken. When Lumivox receives approved affiliate links, update the destination inside each `/go/.../index.html` file. Do not replace the public Sleep System button URLs with long affiliate URLs.
+These pages route visitors through stable internal product paths so the buttons are measurable and no longer broken. The sleep-tracker path presents region-safe options; the bulb and plug paths redirect to live-safe non-affiliate vendor pages. When Lumivox receives approved affiliate links, update the destination inside each `/go/.../index.html` file. Do not replace the public Sleep System button URLs with long affiliate URLs.
 
 Current map:
 
 | Product path | Current destination | Update later with |
 |---|---|---|
-| `/go/sleep-tracker/` | Fitbit Inspire 3 product page | Amazon Associates, Fitbit/retailer, Best Buy, Walmart, or approved network affiliate link |
+| `/go/sleep-tracker/` | Region-safe Fitbit Inspire 3 options page | Amazon Associates, Fitbit/retailer, Best Buy, Walmart, or approved network affiliate link |
+| `/go/sleep-tracker-google-store/` | Google Store Fitbit Inspire 3 page | Approved Google Store or retailer destination |
+| `/go/sleep-tracker-amazon/` | Amazon Fitbit Inspire 3 search | Approved Amazon Associates destination |
+| `/go/sleep-tracker-retailers/` | Broader Fitbit Inspire 3 retailer search | Approved regional retailer destination |
 | `/go/smart-bulbs/` | Govee Smart A19 LED Bulbs product page | Govee affiliate link first, Amazon fallback |
 | `/go/smart-plug/` | Kasa Smart EP25 product page | Amazon Associates, Best Buy/Walmart, or Kasa/TP-Link network affiliate link |
 
@@ -260,6 +284,8 @@ Use this structure to avoid repeat work:
 | Home page content | `index.html` |
 | Sleep product page content | `sleep-system.html` |
 | About page content | `about.html` |
+| Guide hub content | `guides/index.html` |
+| New guide starter | `_templates/article-page.html` |
 
 ## Next recommended steps
 

@@ -4,6 +4,7 @@
   <div class="nav-links">
     <a class="{% if page.nav == 'home' %}active{% endif %}" href="{{ '/' | relative_url }}" data-track="nav_click" data-track-id="nav_home" data-category="navigation" data-label="Home nav">Home</a>
     <a class="{% if page.nav == 'sleep' %}active{% endif %}" href="{{ '/sleep-system/' | relative_url }}" data-track="nav_click" data-track-id="nav_sleep_system" data-category="navigation" data-label="Sleep System nav">Sleep System</a>
+    <a class="{% if page.nav == 'guides' %}active{% endif %}" href="{{ '/guides/' | relative_url }}" data-track="nav_click" data-track-id="nav_guides" data-category="navigation" data-label="Guides nav">Guides</a>
     <a class="{% if page.nav == 'about' %}active{% endif %}" href="{{ '/about/' | relative_url }}" data-track="nav_click" data-track-id="nav_about" data-category="navigation" data-label="About nav">About</a>
     <a class="nav-cta plausible-event-name=Nav+CTA+Click" href="{{ '/sleep-system/' | relative_url }}" data-track="cta_click" data-track-id="nav_cta_start_first_system" data-category="cta" data-label="Nav CTA - Start Your First System">Start Your First System</a>
   </div>
@@ -16,5 +17,6 @@
 <div class="mob" id="mobile-menu">
   <a href="{{ '/' | relative_url }}" data-track="nav_click" data-track-id="mobile_nav_home" data-category="mobile_navigation" data-label="Mobile Home nav">Home</a>
   <a href="{{ '/sleep-system/' | relative_url }}" data-track="nav_click" data-track-id="mobile_nav_sleep_system" data-category="mobile_navigation" data-label="Mobile Sleep System nav">Sleep System</a>
+  <a href="{{ '/guides/' | relative_url }}" data-track="nav_click" data-track-id="mobile_nav_guides" data-category="mobile_navigation" data-label="Mobile Guides nav">Guides</a>
   <a href="{{ '/about/' | relative_url }}" data-track="nav_click" data-track-id="mobile_nav_about" data-category="mobile_navigation" data-label="Mobile About nav">About</a>
 </div>

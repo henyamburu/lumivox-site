@@ -12,7 +12,7 @@ Use a hybrid affiliate approach:
 
 | Category | Public website link | Current destination | Preferred affiliate path later |
 |---|---|---|---|
-| Sleep tracker | `/go/sleep-tracker/` | Fitbit Inspire 3 product page | Amazon Associates or retailer/network link |
+| Sleep tracker | `/go/sleep-tracker/` | Region-safe Fitbit Inspire 3 options page | Amazon Associates or retailer/network link |
 | Smart bulbs | `/go/smart-bulbs/` | Govee Smart A19 LED Bulbs product page | Govee affiliate link first, Amazon fallback |
 | Smart plug | `/go/smart-plug/` | Kasa Smart EP25 product page | Amazon Associates, Best Buy/Walmart, or Kasa/TP-Link network link |
 
@@ -38,6 +38,7 @@ Track these weekly from Cloudflare Web Analytics:
 | Top referrers | Shows where traffic comes from | Cloudflare referrers list |
 | Sleep System page views | Shows product-page interest | Page views for `/sleep-system/` |
 | Product path views | Shows buying intent | Page views for `/go/sleep-tracker/`, `/go/smart-bulbs/`, `/go/smart-plug/` |
+| Sleep tracker retailer path views | Shows which retailer option readers choose | Page views for `/go/sleep-tracker-google-store/`, `/go/sleep-tracker-amazon/`, `/go/sleep-tracker-retailers/` |
 | Product CTR | Shows recommendation strength | `/go/.../` views divided by `/sleep-system/` views |
 | Video engagement proxy | Shows educational interest | Views/clicks around YouTube watch paths if visible in tracking console or later analytics |
 | Geographic audience | Helps with US-only programs | Cloudflare country data, especially US share |
@@ -72,6 +73,9 @@ Unique visitors:
 Top referrers:
 /sleep-system/ views:
 /go/sleep-tracker/ views:
+/go/sleep-tracker-google-store/ views:
+/go/sleep-tracker-amazon/ views:
+/go/sleep-tracker-retailers/ views:
 /go/smart-bulbs/ views:
 /go/smart-plug/ views:
 Best product CTR:
