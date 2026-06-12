@@ -38,6 +38,7 @@ _Last updated: 2026-05-30_
 | LUM-P0-004 | Test all product CTA links and `/go/` routes. | Open | Confirm no 403/404/timeouts. |
 | LUM-P0-005 | Confirm mobile menu behavior. | Open | Must work on phones. |
 | LUM-P0-006 | Identify and document any timeout issue affecting certain devices. | Open | Prior concern: site works on some devices but times out on others. |
+| LUM-P0-007 | Lock down non-public and proprietary files/folders from GitHub/public site access. | Open | Identify proprietary, private, or sensitive information first. Files committed to a public GitHub repo can usually be cloned or downloaded, so decide what must be removed from the repo, moved to a private repo/storage location, ignored, or excluded from the public build. |
 
 ## P1 — Foundation Tasks
 
