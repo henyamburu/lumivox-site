@@ -1,0 +1,122 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;500;700;800&family=Inter:wght@400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif}
+.lv{background:linear-gradient(160deg,#0A0E1A 0%,#121838 45%,#1A1640 75%,#2A1438 100%);color:#F5F7FF;border-radius:16px;overflow:hidden;position:relative}
+h1,h2,h3{font-family:'Sora',sans-serif}
+.glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;pointer-events:none}
+.hero{position:relative;padding:64px 32px 56px;text-align:center;overflow:hidden}
+.badge{display:inline-block;font-size:12px;font-weight:500;padding:6px 16px;border-radius:20px;background:rgba(255,255,255,0.06);border:1px solid rgba(123,92,255,0.3);color:#C9CEFF;margin-bottom:20px}
+.hero h1{font-size:38px;font-weight:800;line-height:1.15;background:linear-gradient(90deg,#7B5CFF 0%,#2D6BFF 35%,#5CD0FF 60%,#FF5C8A 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px}
+.hero p{font-size:15px;color:#B3B9E6;max-width:480px;margin:0 auto 28px;line-height:1.7}
+.btn-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-primary{font-family:'Sora',sans-serif;font-weight:500;font-size:14px;color:#fff;padding:13px 28px;border-radius:10px;background:linear-gradient(90deg,#2D6BFF,#7B5CFF,#FF5C8A);border:none;cursor:pointer;box-shadow:0 0 30px rgba(123,92,255,0.4)}
+.btn-ghost{font-family:'Sora',sans-serif;font-weight:500;font-size:14px;color:#F5F7FF;padding:13px 28px;border-radius:10px;background:rgba(255,255,255,0.06);backdrop-filter:blur(16px);border:1px solid rgba(123,92,255,0.3);cursor:pointer}
+.section{padding:48px 32px;position:relative}
+.section h2{font-size:24px;font-weight:700;text-align:center;margin-bottom:8px;background:linear-gradient(90deg,#5CD0FF,#7B5CFF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline-block;width:100%}
+.section .sub{text-align:center;color:#9AA3C7;font-size:13px;margin-bottom:32px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.card{background:rgba(255,255,255,0.05);backdrop-filter:blur(16px);border:1px solid rgba(123,92,255,0.25);border-radius:14px;padding:22px;position:relative;overflow:hidden;box-shadow:0 0 24px rgba(123,92,255,0.08)}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#2D6BFF,#7B5CFF,#FF5C8A)}
+.card-icon{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,rgba(45,107,255,0.25),rgba(255,92,138,0.25));display:flex;align-items:center;justify-content:center;color:#C9CEFF;font-size:20px;margin-bottom:14px}
+.card h3{font-size:15px;font-weight:600;margin-bottom:6px;background:linear-gradient(90deg,#F5F7FF,#C9CEFF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline-block}
+.card p{font-size:12px;color:#9AA3C7;line-height:1.6}
+.proof{padding:40px 32px;border-top:1px solid rgba(123,92,255,0.2);position:relative}
+.logos{display:flex;justify-content:center;gap:32px;flex-wrap:wrap;margin-bottom:28px;opacity:.6;font-size:13px;font-family:'Sora',sans-serif;font-weight:500;background:linear-gradient(90deg,#5CD0FF,#FF5C8A);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.testimonial{max-width:480px;margin:0 auto;background:rgba(255,255,255,0.05);backdrop-filter:blur(16px);border:1px solid rgba(255,92,138,0.3);border-radius:14px;padding:24px;text-align:center;box-shadow:0 0 30px rgba(255,92,138,0.1)}
+.testimonial .q{font-size:28px;font-weight:800;background:linear-gradient(90deg,#7B5CFF,#5CD0FF,#FF5C8A);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:8px}
+.testimonial p{font-size:13px;color:#F5F7FF;line-height:1.7;margin-bottom:10px}
+.testimonial .name{font-size:12px;color:#9AA3C7}
+.footer{padding:32px;border-top:1px solid rgba(123,92,255,0.2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;position:relative}
+.footer h3{font-size:16px;font-weight:700;background:linear-gradient(90deg,#2D6BFF,#7B5CFF,#5CD0FF,#FF5C8A);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:6px}
+.footer p{font-size:12px;color:#9AA3C7;line-height:1.6}
+.fcol h4{font-size:13px;font-weight:500;margin-bottom:10px;background:linear-gradient(90deg,#F5F7FF,#C9CEFF);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;display:inline-block}
+.fcol a{display:block;font-size:12px;color:#9AA3C7;text-decoration:none;margin-bottom:6px}
+.fcol a:hover{color:#7B5CFF}
+.swatches{display:flex;gap:8px;padding:20px 32px;flex-wrap:wrap;border-top:1px solid rgba(123,92,255,0.2)}
+.sw{flex:1;min-width:80px;text-align:center}
+.sw .chip{height:36px;border-radius:8px;margin-bottom:6px}
+.sw span{font-size:11px;color:#9AA3C7;font-family:'Sora',sans-serif}
+.divider-grad{height:2px;background:linear-gradient(90deg,#2D6BFF,#7B5CFF,#5CD0FF,#FF5C8A);margin:0 32px}
+</style>
+
+<div class="lv">
+  <div class="hero">
+    <div class="glow" style="width:340px;height:340px;background:#2D6BFF;top:-100px;left:-60px"></div>
+    <div class="glow" style="width:320px;height:320px;background:#FF5C8A;top:-60px;right:-90px"></div>
+    <div class="glow" style="width:280px;height:280px;background:#7B5CFF;bottom:-120px;left:35%"></div>
+    <div class="glow" style="width:220px;height:220px;background:#5CD0FF;top:60%;right:20%"></div>
+    <span class="badge"><i class="ti ti-sparkles" style="font-size:12px;margin-right:4px" aria-hidden="true"></i>Smart living, redefined</span>
+    <h1>Your home,<br>intelligently lit</h1>
+    <p>Lumivox curates the smartest sleep tech, wearables, and home automation — so your space works as hard as you do.</p>
+    <div class="btn-row">
+      <button class="btn-primary">Explore guides</button>
+      <button class="btn-ghost">Watch demo</button>
+    </div>
+  </div>
+
+  <div class="divider-grad"></div>
+
+  <div class="section">
+    <div class="glow" style="width:260px;height:260px;background:#5CD0FF;top:0;right:-80px"></div>
+    <h2>Built for the connected home</h2>
+    <p class="sub">Three pillars, one seamless ecosystem</p>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon"><i class="ti ti-moon" aria-hidden="true"></i></div>
+        <h3>Sleep technology</h3>
+        <p>Smart mattresses, trackers, and ambient lighting tuned to your circadian rhythm.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="ti ti-watch" aria-hidden="true"></i></div>
+        <h3>Wearables</h3>
+        <p>Reviews and guides on the wearables that actually earn a place on your wrist.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="ti ti-home-bolt" aria-hidden="true"></i></div>
+        <h3>Home automation</h3>
+        <p>From smart locks to lighting scenes — automation that feels invisible.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="proof">
+    <div class="glow" style="width:300px;height:300px;background:#FF5C8A;bottom:-100px;left:-60px"></div>
+    <div class="logos">
+      <span>PHILIPS HUE</span><span>EIGHT SLEEP</span><span>AQARA</span><span>OURA</span>
+    </div>
+    <div class="testimonial">
+      <div class="q">"</div>
+      <p>Lumivox's buyer guides saved me hours of research — and pointed me to gear I'd never have found on my own.</p>
+      <div class="name">— featured reader review</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="glow" style="width:280px;height:280px;background:#7B5CFF;top:-80px;left:30%"></div>
+    <div>
+      <h3>Lumivox</h3>
+      <p>Smart living,<br>elevated daily.</p>
+    </div>
+    <div class="fcol">
+      <h4>Explore</h4>
+      <a>Buyer guides</a>
+      <a>Reviews</a>
+      <a>Comparisons</a>
+    </div>
+    <div class="fcol">
+      <h4>Company</h4>
+      <a>About</a>
+      <a>Contact</a>
+      <a>Privacy</a>
+    </div>
+  </div>
+
+  <div class="swatches">
+    <div class="sw"><div class="chip" style="background:#2D6BFF"></div><span>#2D6BFF</span></div>
+    <div class="sw"><div class="chip" style="background:#5CD0FF"></div><span>#5CD0FF</span></div>
+    <div class="sw"><div class="chip" style="background:#7B5CFF"></div><span>#7B5CFF</span></div>
+    <div class="sw"><div class="chip" style="background:#FF5C8A"></div><span>#FF5C8A</span></div>
+    <div class="sw"><div class="chip" style="background:linear-gradient(160deg,#0A0E1A,#121838,#1A1640,#2A1438)"></div><span>bg gradient</span></div>
+  </div>
+</div>
