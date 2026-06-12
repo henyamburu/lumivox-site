@@ -3,7 +3,7 @@ const http = require("http");
 const path = require("path");
 
 const root = path.resolve(__dirname, "..");
-const port = Number(process.env.PORT || 4173);
+const port = Number(process.env.PORT || 8000);
 
 const pageRoutes = new Map([
   ["/", "index.html"],
