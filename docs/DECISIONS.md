@@ -114,3 +114,11 @@ Avoid wording such as:
 8. Who Lumivox Is For â€” And Who It Is Not For.
 
 **Implication for Codex:** Keep titles and order consistent across the backlog, roadmap, content workflow, guide hub, and future article pages.
+
+## Decision 012 - Keep Theme Reverts Isolated
+
+**Decision:** The neon/glass theme refactor should stay isolated from content and information architecture changes.
+
+**Checkpoint:** `lumivox-pre-neon-css-refactor`
+
+**Implication for Codex:** If the theme needs to be backed out later, do not reset the whole repository after new content has been added. Restore only the theme-related files from the checkpoint tag, especially `assets/css/style.css`, `_layouts/default.html`, the visible `/go/` interstitial page styles, and local preview/package files if needed. Preserve article/content additions unless the user explicitly asks to remove them.

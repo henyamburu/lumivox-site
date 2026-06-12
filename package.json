@@ -1,0 +1,15 @@
+{
+  "name": "lumivox-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static local development server for the Lumivox website.",
+  "scripts": {
+    "dev": "node tools/local-preview-server.js",
+    "start": "npm run dev",
+    "preview": "node tools/local-preview-server.js",
+    "vite": "vite --host 127.0.0.1 --port 8000"
+  },
+  "devDependencies": {
+    "vite": "latest"
+  }
+}
