@@ -1,0 +1,72 @@
+{
+  "page": {
+    "title": "How to Build a Starter Sleep Automation Setup Under $250",
+    "recommended_slug": "/guides/starter-sleep-automation-under-250/",
+    "meta_description": "A beginner-friendly guide to building a smart bedroom sleep routine using three affordable device categories — sleep trackers, smart bulbs, and smart plugs — with manufacturer-verified specifications and a sample automation schedule."
+  },
+  "affiliate_redirects": [
+    {
+      "label": "Fitbit Inspire 3",
+      "article_href": "/go/fitbit-inspire-3/",
+      "destination_type": "affiliate_or_vendor",
+      "source_reference": "https://store.google.com/product/fitbit_inspire_3_specs",
+      "notes": "May require regional fallback due to prior Google Store access issues."
+    },
+    {
+      "label": "Xiaomi Smart Band 9",
+      "article_href": "/go/xiaomi-smart-band-9/",
+      "destination_type": "affiliate_or_vendor",
+      "source_reference": "https://www.mi.com/global/product/xiaomi-smart-band-9/",
+      "notes": "Confirm current retailer availability and exact SKU."
+    },
+    {
+      "label": "Govee H6008",
+      "article_href": "/go/govee-h6008/",
+      "destination_type": "affiliate_or_vendor",
+      "source_reference": "https://us.govee.com/products/govee-wi-fi-bluetooth-led-bulbs-2-pack",
+      "notes": "Confirm US SKU and Matter/support claims before launch."
+    },
+    {
+      "label": "Wyze Bulb Color",
+      "article_href": "/go/wyze-bulb-color/",
+      "destination_type": "affiliate_or_vendor",
+      "source_reference": "https://support.wyze.com/hc/en-us/articles/360056412992-About-Wyze-Bulb-Color",
+      "notes": "Confirm product availability before launch."
+    },
+    {
+      "label": "Kasa EP10",
+      "article_href": "/go/kasa-ep10/",
+      "destination_type": "affiliate_or_vendor",
+      "source_reference": "https://www.tp-link.com/us/home-networking/smart-plug/",
+      "notes": "Confirm exact EP10 product URL or retailer affiliate URL."
+    },
+    {
+      "label": "Kasa EP25",
+      "article_href": "/go/kasa-ep25/",
+      "destination_type": "affiliate_or_vendor",
+      "source_reference": "https://www.tp-link.com/us/home-networking/smart-plug/ep25p4/",
+      "notes": "Energy monitoring/HomeKit option."
+    }
+  ],
+  "reference_links": [
+    "https://store.google.com/product/fitbit_inspire_3_specs",
+    "https://store.google.com/product/fitbit_inspire_3",
+    "https://www.mi.com/global/product/xiaomi-smart-band-9/",
+    "https://us.govee.com/products/govee-wi-fi-bluetooth-led-bulbs-2-pack",
+    "https://eu.govee.com/products/govee-smart-led-bulb",
+    "https://support.wyze.com/hc/en-us/articles/360056412992-About-Wyze-Bulb-Color",
+    "https://support.wyze.com/hc/en-us/articles/360056455972-Wyze-Bulb-Color-Specs",
+    "https://www.tp-link.com/us/home-networking/smart-plug/ep25p4/",
+    "https://www.tp-link.com/us/home-networking/smart-plug/",
+    "https://www.tp-link.com/us/support/faq/949/"
+  ],
+  "codex_rules": [
+    "Use only one H1.",
+    "Keep disclosures above first product CTA.",
+    "Use /go/ redirects for product CTAs.",
+    "Keep manufacturer links in references only.",
+    "Preserve medical and smart plug safety disclaimers.",
+    "Make tables responsive.",
+    "Verify manufacturer specs and prices before publication."
+  ]
+}
