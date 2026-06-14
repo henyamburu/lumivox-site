@@ -1,185 +1,313 @@
 ---
 layout: default
-title: Lumivox — Build a Smarter Way to Live
-description: Smart living systems that connect wearable data with your home environment.
+title: Lumivox - Turn Sleep Data Into a Bedroom Routine
+description: Lumivox helps you turn wearable sleep data into a simple bedroom routine with smart lights, smart plugs, and practical setup guides.
 nav: home
 ---
 
-<!-- Hero -->
-  <section class="hero">
-    <div class="hero-wrap">
-      <div>
-        <span class="eyebrow">Smart living, simplified</span>
-        <h1>Build a <em>Smarter</em><br>Way to Live</h1>
-        <p class="lead">Your wearable is already tracking your sleep. Lumivox shows you how to set up your home so it actually supports better rest.</p>
-        <a class="btn btn-dark plausible-event-name=Sleep+System+Click" href="{{ '/sleep-system/' | relative_url }}" data-track="cta_click" data-track-id="home_hero_start_first_system" data-category="cta" data-label="Home hero - Build Your Sleep System">Build Your Sleep System →</a>
-      </div>
-      <div class="hero-visual">
-        <div class="hv-icon">🏠</div>
-        <div class="hv-fw">
-          <div class="hv-step">⌚ Wearable</div>
-          <div class="hv-arrow">→</div>
-          <div class="hv-step">⚡ System</div>
-          <div class="hv-arrow">→</div>
-          <div class="hv-step">✨ Results</div>
-        </div>
-        <div class="hv-label">The Lumivox Loop</div>
+<section class="home-hero" aria-labelledby="home-hero-title">
+  <div class="home-hero-inner">
+    <div class="home-hero-copy">
+      <span class="eyebrow">Sleep data, meet your room</span>
+      <h1 id="home-hero-title">You have tracked your sleep for months. Your bedroom never got the memo.</h1>
+      <p class="lead">Lumivox helps you turn sleep data into a simple bedroom routine: smart lights, smart plugs, and practical setup steps that support your wind-down and wake-up rhythm.</p>
+      <p class="home-hero-anchor">Start with three devices, under $250 before taxes, shipping, and price changes, designed for a one-evening setup once you have the gear.</p>
+      <div class="home-actions" aria-label="Homepage primary actions">
+        <a class="btn btn-dark" href="#fit-check" data-track-category="homepage" data-track-action="hero_fit_check_click" data-track-label="primary">Take the 60-sec fit check</a>
+        <a class="btn btn-outline" href="{{ '/sleep-system/' | relative_url }}" data-track-category="homepage" data-track-action="hero_starter_system_click" data-track-label="secondary">See the starter system</a>
       </div>
     </div>
-  </section>
 
-  <hr class="rule">
-
-  <!-- Problem -->
-  <section class="sec-bg">
-    <div class="inner">
-      <div class="problem-grid">
-        <div>
-          <span class="eyebrow">The Problem</span>
-          <h2>You’re collecting data. Nothing is changing.</h2>
+    <div class="home-hero-panel" aria-label="Lumivox starter routine overview">
+      <div class="room-panel">
+        <div class="room-panel-header">
+          <span>7-night routine</span>
+          <strong>Data to room action</strong>
         </div>
-        <div>
-          <div class="problem-cards">
-            <div class="prob-card">
-              <div class="prob-icon">📊</div>
-              <p class="prob-text">You’ve tracked your sleep for months and still wake up exhausted.</p>
-            </div>
-            <div class="prob-card">
-              <div class="prob-icon">🏠</div>
-              <p class="prob-text">Your bedroom environment is not set up to support recovery.</p>
-            </div>
-            <div class="prob-card">
-              <div class="prob-icon">😴</div>
-              <p class="prob-text">Your tracker shows the pattern, but your room stays the same.</p>
-            </div>
-          </div>
-          <p class="problem-close">Tracking is only half the system.<br>The other half is your environment.</p>
+        <div class="room-timeline">
+          <div><span>1</span><p>Observe wearable trends</p></div>
+          <div><span>2</span><p>Set light and plug routines</p></div>
+          <div><span>3</span><p>Run for 7 nights</p></div>
+          <div><span>4</span><p>Adjust one thing</p></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <hr class="rule">
-
-  
-<!-- Home Explainer Video -->
-<section class="sec">
-  <div class="inner video-grid">
-    <div>
-      <span class="eyebrow">Watch the Concept</span>
-      <h2>How Lumivox turns sleep data into a smarter home routine</h2>
-      <p class="lead" style="margin-top:16px;">
-        A quick walkthrough of how wearable data, smart lights, and simple routines can support better sleep.
-      </p>
-    </div>
-
-    <div>
-      {% include youtube-embed.html 
-        id="G_Pi1QIfRXg"
-        title="Lumivox Smart Living Overview"
-        watch_url="https://www.youtube.com/watch?v=G_Pi1QIfRXg" %}
     </div>
   </div>
 </section>
 
-<hr class="rule">
-
-  <!-- The Lumivox Loop -->
-  <section class="sec">
-    <div class="inner">
-      <div class="loop-head">
-        <span class="eyebrow">The Lumivox Loop</span>
-        <h2>Input → System → Output</h2>
-        <p class="lead" style="margin-top:14px;">Three steps that turn passive data into real-world results.</p>
-      </div>
-      <div class="loop-blocks">
-        <div class="loop-block">
-          <div class="lb-tag">Input</div>
-          <div class="lb-icon">⌚</div>
-          <div class="lb-title">Wearable Data</div>
-          <p class="lb-text">Sleep quality, stress levels, and activity — captured automatically every day.</p>
-        </div>
-        <div class="loop-arrow">→</div>
-        <div class="loop-block">
-          <div class="lb-tag">System</div>
-          <div class="lb-icon">⚡</div>
-          <div class="lb-title">Smart Home</div>
-          <p class="lb-text">Smart lights, plugs, and routines designed around your body’s natural rhythms./p>
-        </div>
-        <div class="loop-arrow">→</div>
-        <div class="loop-block">
-          <div class="lb-tag">Output</div>
-          <div class="lb-icon">✨</div>
-          <div class="lb-title">Real Results</div>
-          <p class="lb-text">Better sleep, sharper energy, and consistent daily performance.</p>
-        </div>
-      </div>
+<section id="fit-check" class="home-section home-fit-check" aria-labelledby="fit-check-title">
+  <div class="inner">
+    <div class="section-kicker">
+      <span class="eyebrow">60-second fit check</span>
+      <h2 id="fit-check-title">Is Lumivox for you?</h2>
+      <p class="lead">Answer five quick questions. Nothing is stored, submitted, or tied to you.</p>
     </div>
-  </section>
 
-  <hr class="rule">
+    <form class="fit-check-card" data-fit-check novalidate>
+      <fieldset class="fit-question">
+        <legend>Do you already use, or plan to use, a sleep tracker?</legend>
+        <label><input type="radio" name="tracker" value="fit"> Yes</label>
+        <label><input type="radio" name="tracker" value="maybe"> Not yet</label>
+      </fieldset>
 
-  <!-- First System Hook -->
-  <section class="sec-bg">
-    <div class="inner">
-      <div class="hook-grid">
-        <div class="hook-visual">
-          <div class="hkv-icon">🌙</div>
-          <div class="hkv-title">Sleep System</div>
-          <div class="hkv-sub">Under $250</div>
-        </div>
-        <div class="hook-text">
-          <span class="eyebrow">Start Here</span>
-          <h2>Start with the Lumivox Sleep System</h2>
-          <p class="body" style="margin:16px 0 24px;">A simple setup that improves how you sleep and wake up using affordable devices.</p>
-          <ul class="hook-bullets">
-            <li>Automatic night lighting that winds you down</li>
-            <li>Gentle wake-up routine that respects your sleep cycle</li>
-            <li>Environment scheduled around your body’s natural rhythms</li>
-          </ul>
-          <a class="btn btn-dark plausible-event-name=Sleep+System+Click" href="{{ '/sleep-system/' | relative_url }}" data-track="cta_click" data-track-id="home_sleep_hook_view_setup" data-category="cta" data-label="Home sleep hook - See What You Need">See What You Need →</a>
-        </div>
+      <fieldset class="fit-question">
+        <legend>Do you wake up tired even after checking your sleep data?</legend>
+        <label><input type="radio" name="tired" value="fit"> Often</label>
+        <label><input type="radio" name="tired" value="maybe"> Sometimes</label>
+        <label><input type="radio" name="tired" value="not"> Not really</label>
+      </fieldset>
+
+      <fieldset class="fit-question">
+        <legend>Would you prefer a simple bedroom setup instead of a full smart-home buildout?</legend>
+        <label><input type="radio" name="simple" value="fit"> Yes</label>
+        <label><input type="radio" name="simple" value="maybe"> Maybe</label>
+        <label><input type="radio" name="simple" value="not"> No</label>
+      </fieldset>
+
+      <fieldset class="fit-question">
+        <legend>Are you comfortable using basic apps for lights or smart plugs?</legend>
+        <label><input type="radio" name="apps" value="fit"> Yes</label>
+        <label><input type="radio" name="apps" value="maybe"> Maybe</label>
+        <label><input type="radio" name="apps" value="not"> No</label>
+      </fieldset>
+
+      <fieldset class="fit-question">
+        <legend>Are you looking for routine support, not medical treatment?</legend>
+        <label><input type="radio" name="routine" value="fit"> Yes</label>
+        <label><input type="radio" name="routine" value="not"> No</label>
+      </fieldset>
+
+      <div class="fit-check-actions">
+        <button class="btn btn-dark" type="submit" data-track-category="homepage" data-track-action="fit_check_completed" data-track-label="submit">See my fit</button>
+        <a class="fit-fallback" href="{{ '/who-lumivox-is-for/' | relative_url }}">No JavaScript? See who Lumivox is for.</a>
       </div>
-    </div>
-  </section>
 
-  <hr class="rule">
-
-  <!-- Why Lumivox -->
-  <section class="sec">
-    <div class="inner">
-      <div class="why-head">
-        <span class="eyebrow">Why Lumivox</span>
-        <h2>Built for real daily use</h2>
-      </div>
-      <div class="why-grid">
-        <div class="why-card">
-          <div class="wc-num">01</div>
-          <div class="wc-title">Simple systems</div>
-          <p class="wc-text">No complicated tech. No steep learning curve. Just clear, practical setups that work.</p>
-        </div>
-        <div class="why-card">
-          <div class="wc-num">02</div>
-          <div class="wc-title">Real daily use</div>
-          <p class="wc-text">Built for people who want results, not gadgets. Every recommendation is tested for daily life.</p>
-        </div>
-        <div class="why-card">
-          <div class="wc-num">03</div>
-          <div class="wc-title">Affordable devices</div>
-          <p class="wc-text">You don't need a $2,000 setup. Every system is built with accessible, budget-friendly options.</p>
-        </div>
-        <div class="why-card">
-          <div class="wc-num">04</div>
-          <div class="wc-title">Designed for consistency</div>
-          <p class="wc-text">The best system is one you'll actually use. Lumivox is built for habits, not hype.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <div class="cta-dark">
-    <h2>Start building a smarter way to live.</h2>
-    <p>Start with a simple sleep setup built around products you can actually use.</p>
-    <a class="btn btn-accent plausible-event-name=Sleep+System+Click" href="{{ '/sleep-system/' | relative_url }}" data-track="cta_click" data-track-id="home_bottom_explore_first_system" data-category="cta" data-label="Home bottom CTA - Start with the Sleep System — Under $250">Start with the Sleep System — Under $250 →</a>
+      <div class="fit-result" data-fit-result role="status" aria-live="polite" hidden></div>
+    </form>
   </div>
+</section>
+
+<section class="home-section sec-bg" aria-labelledby="problem-title">
+  <div class="inner home-split">
+    <div>
+      <span class="eyebrow">The problem</span>
+      <h2 id="problem-title">Sleep trackers show what happened. They do not automatically change the room you sleep in.</h2>
+    </div>
+    <div class="home-bullet-card">
+      <ul>
+        <li>You get a sleep score.</li>
+        <li>You notice the same tired mornings.</li>
+        <li>You are not sure whether to adjust lights, timing, temperature, noise, or routine.</li>
+        <li>Lumivox gives you a practical path: observe, set up, test, adjust.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="home-section" aria-labelledby="method-title">
+  <div class="inner">
+    <div class="section-kicker">
+      <span class="eyebrow">The Lumivox method</span>
+      <h2 id="method-title">Data to routine to room to review.</h2>
+      <p class="lead">Keep the first system simple enough to try, then use your wearable as a trend tool.</p>
+    </div>
+    <div class="method-grid">
+      <article class="method-card">
+        <span>1</span>
+        <h3>Observe</h3>
+        <p>Use your wearable as a trend tool, not a medical diagnosis.</p>
+      </article>
+      <article class="method-card">
+        <span>2</span>
+        <h3>Set up</h3>
+        <p>Use simple devices: smart lights, smart plugs, and routines that shape the bedroom environment.</p>
+      </article>
+      <article class="method-card">
+        <span>3</span>
+        <h3>Adjust</h3>
+        <p>Run the routine for 7 nights, then tune based on what you notice.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="home-section sec-bg" aria-labelledby="starter-title">
+  <div class="inner">
+    <div class="section-kicker">
+      <span class="eyebrow">Starter system under $250</span>
+      <h2 id="starter-title">Start with wearable data, smart bulbs, and one smart plug.</h2>
+      <p class="lead">The goal is not a full smart-home buildout. It is one bedroom routine you can test for a week.</p>
+    </div>
+    <div class="starter-system-grid">
+      <article class="system-card">
+        <h3>Sleep tracker</h3>
+        <p><strong>Purpose:</strong> trend awareness.</p>
+        <p><strong>Examples:</strong> Fitbit Inspire or Xiaomi Smart Band.</p>
+        <a href="{{ '/fitbit-inspire-3-vs-xiaomi-smart-band-10/' | relative_url }}" data-track-category="homepage" data-track-action="starter_compare_trackers" data-track-label="sleep_tracker">Compare trackers</a>
+      </article>
+      <article class="system-card">
+        <h3>Smart bulbs</h3>
+        <p><strong>Purpose:</strong> evening dimming and morning light.</p>
+        <p><strong>Examples:</strong> Govee or Wyze.</p>
+        <a href="{{ '/guides/starter-sleep-automation-under-250/#smart-bulbs' | relative_url }}" data-track-category="homepage" data-track-action="starter_view_bulbs" data-track-label="smart_bulbs">View bulb options</a>
+      </article>
+      <article class="system-card">
+        <h3>Smart plug</h3>
+        <p><strong>Purpose:</strong> simple scheduled device control.</p>
+        <p><strong>Examples:</strong> Kasa or TP-Link.</p>
+        <a href="{{ '/kasa-smart-plug-setup-for-sleep-routines/' | relative_url }}" data-track-category="homepage" data-track-action="starter_view_plug" data-track-label="smart_plug">View plug setup</a>
+      </article>
+      <aside class="system-cost-card">
+        <strong>Starter goal</strong>
+        <p>Keep the first system under $250 before taxes, shipping, and price changes.</p>
+      </aside>
+    </div>
+    <p class="home-safety-note"><strong>Safety note:</strong> Smart plugs should not be used with high-draw heaters, medical devices, or appliances that exceed the plug rating.</p>
+  </div>
+</section>
+
+<section class="home-section" aria-labelledby="start-small-title">
+  <div class="inner">
+    <div class="section-kicker">
+      <span class="eyebrow">Start small</span>
+      <h2 id="start-small-title">Choose the shortest useful path.</h2>
+    </div>
+    <div class="path-grid">
+      <article class="path-card">
+        <h3>I just want the gist</h3>
+        <p>See the starter sleep system in under 3 minutes.</p>
+        <a href="{{ '/sleep-system/' | relative_url }}" data-track-category="homepage" data-track-action="short_path_starter_system" data-track-label="gist">View the Starter System</a>
+      </article>
+      <article class="path-card">
+        <h3>I want to build it</h3>
+        <p>Use the checklist to buy, install, test, and adjust your first setup.</p>
+        <a href="{{ '/guides/beginner-smart-home-sleep-system-checklist/' | relative_url }}" data-track-category="homepage" data-track-action="short_path_checklist" data-track-label="build">Open the Checklist</a>
+      </article>
+      <article class="path-card">
+        <h3>I want the details</h3>
+        <p>Read the full guides for comparisons, safety notes, setup steps, and troubleshooting.</p>
+        <a href="{{ '/guides/' | relative_url }}" data-track-category="homepage" data-track-action="short_path_guides" data-track-label="details">Browse the Guides</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="home-section sec-bg" aria-labelledby="reset-title">
+  <div class="inner reset-panel">
+    <div>
+      <span class="eyebrow">Return loop</span>
+      <h2 id="reset-title">Try the 7-night bedroom reset.</h2>
+      <p class="lead">Set up one simple routine. Run it for 7 nights. Come back and compare what changed: bedtime consistency, wake-up timing, room comfort, and how your wearable trends look over the week.</p>
+      <a class="btn btn-dark" href="{{ '/guides/beginner-smart-home-sleep-system-checklist/' | relative_url }}" data-track-category="homepage" data-track-action="seven_night_reset_click" data-track-label="checklist">Start the 7-Night Reset</a>
+    </div>
+    <ol class="reset-steps">
+      <li>Pick one routine.</li>
+      <li>Run it for 7 nights.</li>
+      <li>Check your wearable trends.</li>
+      <li>Adjust one thing at a time.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="home-section" aria-labelledby="article-flow-title">
+  <div class="inner">
+    <div class="section-kicker">
+      <span class="eyebrow">Guided article flow</span>
+      <h2 id="article-flow-title">Read only what helps with your next decision.</h2>
+      <p class="lead">Each guide has a job. Start with the short path, then go deeper when you need details.</p>
+    </div>
+
+    <div class="article-flow-grid">
+      <section class="article-stage">
+        <h3>Start Here</h3>
+        <article class="flow-card">
+          <span>Quick overview</span>
+          <h4>Starter Sleep Automation Setup Under $250</h4>
+          <p><strong>Short answer:</strong> Start with a tracker, bulbs, and one plug.</p>
+          <a href="{{ '/guides/starter-sleep-automation-under-250/' | relative_url }}" data-track-category="homepage" data-track-action="guide_flow_click" data-track-label="starter_setup">Read full guide</a>
+        </article>
+        <article class="flow-card">
+          <span>Setup guide</span>
+          <h4>Beginner Smart Home Sleep System Checklist</h4>
+          <p><strong>Short answer:</strong> Follow a staged checklist before changing too many things.</p>
+          <a href="{{ '/guides/beginner-smart-home-sleep-system-checklist/' | relative_url }}" data-track-category="homepage" data-track-action="guide_flow_click" data-track-label="checklist">Open checklist</a>
+        </article>
+      </section>
+
+      <section class="article-stage">
+        <h3>Understand Your Data</h3>
+        <article class="flow-card">
+          <span>Quick overview</span>
+          <h4>What Wearable Sleep Data Can and Cannot Tell You</h4>
+          <p><strong>Short answer:</strong> Use your tracker for trends, not diagnosis.</p>
+          <a href="{{ '/guides/wearable-sleep-data/' | relative_url }}" data-track-category="homepage" data-track-action="guide_flow_click" data-track-label="wearable_data">Read full guide</a>
+        </article>
+      </section>
+
+      <section class="article-stage">
+        <h3>Choose Devices</h3>
+        <article class="flow-card">
+          <span>Detailed comparison</span>
+          <h4>Fitbit Inspire 3 vs Xiaomi Smart Band 10</h4>
+          <p><strong>Short answer:</strong> Compare beginner trackers by fit, features, and ecosystem.</p>
+          <a href="{{ '/fitbit-inspire-3-vs-xiaomi-smart-band-10/' | relative_url }}" data-track-category="homepage" data-track-action="guide_flow_click" data-track-label="tracker_comparison">Compare options</a>
+        </article>
+        <article class="flow-card">
+          <span>Quick overview</span>
+          <h4>Govee vs Wyze Bulbs</h4>
+          <p><strong>Short answer:</strong> Use dimmable smart bulbs to support evening wind-down and morning light cues.</p>
+          <a href="{{ '/guides/starter-sleep-automation-under-250/#smart-bulbs' | relative_url }}" data-track-category="homepage" data-track-action="guide_flow_click" data-track-label="smart_bulbs">View bulb options</a>
+        </article>
+        <article class="flow-card">
+          <span>Safety guide</span>
+          <h4>Kasa Smart Plug Setup</h4>
+          <p><strong>Short answer:</strong> Use one safe device per plug and avoid high-draw appliances.</p>
+          <a href="{{ '/kasa-smart-plug-setup-for-sleep-routines/' | relative_url }}" data-track-category="homepage" data-track-action="guide_flow_click" data-track-label="kasa_plug">Read full guide</a>
+        </article>
+      </section>
+
+      <section class="article-stage">
+        <h3>Build the Routine</h3>
+        <article class="flow-card">
+          <span>Setup guide</span>
+          <h4>Bedroom Wind-Down Automation</h4>
+          <p><strong>Short answer:</strong> Schedule light and plug changes around your target sleep window.</p>
+          <a href="{{ '/how-to-build-bedroom-wind-down-automation/' | relative_url }}" data-track-category="homepage" data-track-action="guide_flow_click" data-track-label="wind_down">Read full guide</a>
+        </article>
+      </section>
+
+      <section class="article-stage">
+        <h3>Decide if Lumivox Fits</h3>
+        <article class="flow-card">
+          <span>Quick overview</span>
+          <h4>Who Lumivox Is For</h4>
+          <p><strong>Short answer:</strong> Lumivox is for routine support, not medical diagnosis or treatment.</p>
+          <a href="{{ '/who-lumivox-is-for/' | relative_url }}" data-track-category="homepage" data-track-action="guide_flow_click" data-track-label="who_lumivox_is_for">Read full guide</a>
+        </article>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section class="home-section sec-bg" aria-labelledby="trust-title">
+  <div class="inner trust-grid">
+    <div>
+      <span class="eyebrow">Trust notes</span>
+      <h2 id="trust-title">Practical guidance, not medical claims.</h2>
+    </div>
+    <div class="trust-notes">
+      <p><strong>Affiliate disclosure:</strong> Lumivox may earn a commission when you use some product links. Recommendations are educational and based on practical fit, not medical advice.</p>
+      <p><strong>Medical caution:</strong> Lumivox is not medical advice. Sleep trackers and smart-home routines cannot diagnose or treat sleep disorders. If you have persistent sleep problems, consult a qualified healthcare professional.</p>
+    </div>
+  </div>
+</section>
+
+<section class="home-final-cta" aria-labelledby="final-cta-title">
+  <div class="inner">
+    <h2 id="final-cta-title">Start with the fit check, or go straight to the starter sleep system.</h2>
+    <div class="home-actions">
+      <a class="btn btn-dark" href="#fit-check" data-track-category="homepage" data-track-action="final_fit_check_click" data-track-label="primary">Take the 60-sec fit check</a>
+      <a class="btn btn-outline" href="{{ '/sleep-system/' | relative_url }}" data-track-category="homepage" data-track-action="final_starter_system_click" data-track-label="secondary">See the starter system</a>
+    </div>
+  </div>
+</section>

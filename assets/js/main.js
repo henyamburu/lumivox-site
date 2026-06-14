@@ -43,4 +43,70 @@ document.addEventListener('DOMContentLoaded', function () {
       hasStarted = false;
     });
   });
+
+  const fitCheck = document.querySelector('[data-fit-check]');
+  if (fitCheck) {
+    const result = fitCheck.querySelector('[data-fit-result]');
+    const submit = fitCheck.querySelector('button[type="submit"]');
+
+    function trackHomepage(action, label) {
+      plausibleTrack('Homepage Interaction', {
+        category: 'homepage',
+        action,
+        label
+      });
+    }
+
+    fitCheck.addEventListener('change', function () {
+      if (!fitCheck.dataset.started) {
+        fitCheck.dataset.started = 'true';
+        trackHomepage('fit_check_started', 'first_answer');
+      }
+    });
+
+    fitCheck.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const answers = Array.from(new FormData(fitCheck).values());
+      if (answers.length < 5) {
+        if (result) {
+          result.hidden = false;
+          result.innerHTML = '<h3>Finish the fit check</h3><p>Please answer all five questions so the result is useful.</p>';
+        }
+        return;
+      }
+
+      const fitScore = answers.filter(function (value) { return value === 'fit'; }).length;
+      const notScore = answers.filter(function (value) { return value === 'not'; }).length;
+      let label = 'maybe_fit';
+      let message = 'Start with the guide on what wearable sleep data can and cannot tell you before buying anything.';
+      let href = '/guides/wearable-sleep-data/';
+      let cta = 'Read the Sleep Data Guide';
+
+      if (answers.includes('not') && (notScore >= 2 || answers[4] === 'not')) {
+        label = 'not_fit';
+        message = 'Lumivox may not be the right starting point if you need medical diagnosis, treatment, or a full smart-home platform.';
+        href = '/who-lumivox-is-for/';
+        cta = 'See Who Lumivox Is For';
+      } else if (fitScore >= 4 && answers[4] === 'fit') {
+        label = 'good_fit';
+        message = 'Lumivox may be a good fit. Start with the beginner sleep system and run a simple 7-night bedroom routine test.';
+        href = '/sleep-system/';
+        cta = 'See the Starter System';
+      }
+
+      if (result) {
+        result.hidden = false;
+        result.dataset.trackCategory = 'homepage';
+        result.dataset.trackAction = 'fit_check_completed';
+        result.dataset.trackLabel = label;
+        result.innerHTML = '<h3>' + (label === 'good_fit' ? 'Good fit' : label === 'not_fit' ? 'Not the first stop' : 'Maybe fit') + '</h3><p>' + message + '</p><a href="' + href + '">' + cta + '</a>';
+      }
+
+      if (submit) {
+        submit.dataset.trackLabel = label;
+      }
+      trackHomepage('fit_check_completed', label);
+    });
+  }
 });
