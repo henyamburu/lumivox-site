@@ -26,6 +26,36 @@ Use this format:
 
 ---
 
+## 2026-06-15 - Homepage Hook Flow Refinement
+
+**Type:** Homepage / Docs
+
+**Summary:**
+- Refined the homepage into the requested section sequence: Hero, Problem, Method, Starter System, Fit Check, Return Loop, Article Flow, Trust, and Final CTA.
+- Moved the fit check below the starter system so visitors see the problem, method, and starter setup first.
+- Updated hero and final CTA labels to emphasize the Starter System, method explanation, fit check, and Guides hub.
+- Added compact problem and trust card panels.
+- Added the current resume point to `docs/PROJECT_STATE.md`.
+
+**Branch / checkpoint:**
+- Active branch: `feature/homepage-hook-flow`
+- Latest commit before this docs entry: `eef14ef Refine homepage section flow`
+- Pre-redesign checkpoint tag: `checkpoint-pre-homepage-hook-redesign-2026-06-13`
+- PR URL: `https://github.com/henyamburu/lumivox-site/pull/new/feature/homepage-hook-flow`
+
+**Checks performed:**
+- `node --check assets/js/main.js`
+- `node --check tools/local-preview-server.js`
+- Local homepage returned `200`.
+- Rendered homepage source showed the expected section order.
+- Rendered homepage internal links returned `200`.
+- Loaded stylesheet included the new homepage selectors.
+
+**Risks / follow-ups:**
+- Browser screenshot QA was not completed because the in-app browser/node sandbox failed during the prior pass.
+- No `build` script exists in `package.json`; use the local preview server for static validation unless the workflow changes.
+- The Article Flow links bulb guidance to the starter setup anchor until a dedicated Govee vs Wyze page route exists.
+
 ## 2026-05-30 — Codex Documentation Baseline
 
 **Type:** Docs

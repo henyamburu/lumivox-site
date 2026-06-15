@@ -140,3 +140,48 @@ Priority outcomes:
 6. Add the first content cluster pages.
 7. Create a weekly metrics routine.
 8. Keep the docs updated after every Codex task.
+
+## Current Resume Point - 2026-06-15
+
+Active homepage work is on branch `feature/homepage-hook-flow`.
+
+Current pushed commits:
+
+- `4c5cd58 Redesign homepage hook flow`
+- `eef14ef Refine homepage section flow`
+
+Checkpoint before the homepage redesign:
+
+- `checkpoint-pre-homepage-hook-redesign-2026-06-13`
+
+Open or create the PR from:
+
+- `https://github.com/henyamburu/lumivox-site/pull/new/feature/homepage-hook-flow`
+
+The homepage now follows this intended flow:
+
+1. Hero
+2. Problem
+3. Method
+4. Starter System
+5. Fit Check
+6. Return Loop
+7. Article Flow
+8. Trust
+9. Final CTA
+
+Validation already performed locally:
+
+- `node --check assets/js/main.js`
+- `node --check tools/local-preview-server.js`
+- `http://127.0.0.1:8000/` returned `200`
+- Rendered homepage source showed the expected section order
+- Rendered homepage internal links returned `200`
+- Loaded stylesheet included the new homepage selectors
+
+Known follow-ups:
+
+- Browser screenshot QA was not completed because the in-app browser/node sandbox failed during the prior pass.
+- There is no `build` script in `package.json`; use the local preview server for static render validation unless the deployment workflow changes.
+- The Article Flow currently links bulb guidance to the starter setup anchor because there is no dedicated Govee vs Wyze page route yet.
+- If this homepage theme is backed out later, use the checkpoint tag above as the last known pre-homepage-redesign state while preserving any later content additions manually.
