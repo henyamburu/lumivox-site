@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --forest:#04342C;--mid:#1D9E75;--accent:#5DCAA5;--soft:#E1F5EE;
+  --navy:#0A1628;--off-white:#F7F8F6;--card-bg:#FFFFFF;
+  --text:#1A1A1A;--muted:#5C6672;--border:#E2E6E3;
+  --sg:'Space Grotesk',sans-serif;--dm:'DM Serif Display',serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sg);background:var(--off-white);color:var(--text);font-size:15px;line-height:1.6}
+
+/* NAV */
+nav{background:var(--forest);padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(93,202,165,.15)}
+.nav-logo{font-family:var(--sg);font-weight:600;font-size:18px;color:#fff;letter-spacing:-.3px}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px}
+.nav-links a{color:rgba(255,255,255,.65);text-decoration:none;font-size:13px;font-weight:400;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--mid);color:#fff;font-size:12px;font-weight:500;padding:7px 16px;border-radius:6px;text-decoration:none;transition:background .2s}
+.nav-cta:hover{background:var(--accent);color:var(--forest)}
+
+/* HERO */
+.hero{background:linear-gradient(160deg,var(--forest) 0%,var(--navy) 100%);padding:72px 32px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-60px;width:420px;height:420px;background:radial-gradient(circle,rgba(29,158,117,.18) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-40px;left:20%;width:280px;height:280px;background:radial-gradient(circle,rgba(93,202,165,.08) 0%,transparent 70%);pointer-events:none}
+.hero-eyebrow{font-family:var(--dm);font-style:italic;color:var(--accent);font-size:15px;margin-bottom:16px;opacity:.9}
+.hero-h1{font-family:var(--sg);font-size:42px;font-weight:600;color:#fff;line-height:1.15;max-width:580px;margin-bottom:20px;letter-spacing:-.5px}
+.hero-h1 em{font-style:normal;color:var(--accent)}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.65);max-width:480px;margin-bottom:36px;line-height:1.7;font-weight:300}
+.hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.btn-primary{background:var(--mid);color:#fff;padding:13px 24px;border-radius:8px;text-decoration:none;font-weight:500;font-size:14px;transition:background .2s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--accent);color:var(--forest)}
+.btn-ghost{color:rgba(255,255,255,.7);font-size:14px;text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s}
+.btn-ghost:hover{color:#fff}
+.hero-stats{display:flex;gap:36px;margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,255,255,.08)}
+.stat-item{display:flex;flex-direction:column;gap:4px}
+.stat-num{font-size:28px;font-weight:600;color:#fff;letter-spacing:-.5px}
+.stat-num .pulse-dot{display:inline-block;width:7px;height:7px;background:var(--accent);border-radius:50%;margin-left:4px;animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.stat-label{font-size:12px;color:rgba(255,255,255,.45);font-weight:400}
+
+/* CATEGORY PILLS */
+.cat-strip{background:var(--forest);padding:0 32px 24px}
+.cat-pills{display:flex;gap:10px;flex-wrap:wrap}
+.cat-pill{background:rgba(255,255,255,.06);color:rgba(255,255,255,.65);border:1px solid rgba(255,255,255,.1);padding:7px 16px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;text-decoration:none}
+.cat-pill:hover,.cat-pill.active{background:var(--mid);color:#fff;border-color:var(--mid)}
+
+/* SECTION SHARED */
+section{padding:64px 32px}
+.section-eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--mid);margin-bottom:10px}
+.section-h2{font-size:26px;font-weight:600;color:var(--text);letter-spacing:-.3px;margin-bottom:6px}
+.section-sub{font-size:15px;color:var(--muted);max-width:540px}
+.section-header{margin-bottom:36px}
+
+/* TOP PICKS */
+.top-picks{background:var(--off-white)}
+.picks-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pick-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:box-shadow .2s,transform .2s}
+.pick-card:hover{box-shadow:0 8px 32px rgba(4,52,44,.1);transform:translateY(-2px)}
+.pick-card.featured{border-color:var(--mid);border-width:2px}
+.pick-badge{background:var(--forest);color:var(--accent);font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:6px 14px}
+.pick-img{background:linear-gradient(135deg,var(--soft) 0%,#c8eee1 100%);height:120px;display:flex;align-items:center;justify-content:center}
+.pick-icon{font-size:42px}
+.pick-body{padding:18px}
+.pick-cat{font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--mid);margin-bottom:5px}
+.pick-name{font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px;line-height:1.3}
+.pick-price{font-size:13px;color:var(--muted);margin-bottom:10px}
+.pick-stars{color:#F5A623;font-size:12px;margin-bottom:10px}
+.pick-stars span{color:var(--muted);font-size:11px;margin-left:4px}
+.pick-fit{background:var(--soft);border-radius:6px;padding:8px 10px;font-size:12px;color:var(--forest);margin-bottom:12px;line-height:1.4}
+.pick-fit strong{font-weight:600}
+.pick-link{display:block;text-align:center;background:var(--forest);color:#fff;padding:10px;border-radius:7px;font-size:13px;font-weight:500;text-decoration:none;transition:background .2s}
+.pick-link:hover{background:var(--mid)}
+
+/* REVIEW SECTION */
+.review-section{background:#fff;border-top:1px solid var(--border)}
+.review-layout{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}
+.review-tag{display:inline-flex;align-items:center;gap:6px;background:var(--soft);color:var(--forest);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:5px 12px;border-radius:4px;margin-bottom:16px}
+.review-h2{font-family:var(--dm);font-size:32px;color:var(--text);line-height:1.25;margin-bottom:12px}
+.review-meta{display:flex;gap:16px;align-items:center;margin-bottom:24px;flex-wrap:wrap}
+.review-author{font-size:12px;color:var(--muted)}
+.review-score{background:var(--forest);color:var(--accent);font-size:12px;font-weight:600;padding:4px 10px;border-radius:4px}
+.review-body p{font-size:15px;color:#3a3a3a;line-height:1.8;margin-bottom:16px}
+.review-body h3{font-size:16px;font-weight:600;color:var(--text);margin:24px 0 10px;padding-left:12px;border-left:3px solid var(--mid)}
+.pro-con{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0}
+.pro-box,.con-box{border-radius:8px;padding:14px}
+.pro-box{background:#f0fdf7;border:1px solid #b6e8d4}
+.con-box{background:#fff8f0;border:1px solid #f5d0a8}
+.pro-box h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#0F6E56;margin-bottom:8px}
+.con-box h4{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:#854F0B;margin-bottom:8px}
+.pro-box li,.con-box li{font-size:12px;color:#3a3a3a;margin-bottom:5px;padding-left:14px;position:relative;list-style:none}
+.pro-box li::before{content:'✓';position:absolute;left:0;color:#1D9E75;font-weight:600}
+.con-box li::before{content:'✗';position:absolute;left:0;color:#D85A30}
+
+/* SIDEBAR */
+.review-sidebar{position:sticky;top:72px}
+.sidebar-card{background:var(--off-white);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px}
+.sidebar-card h4{font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:14px}
+.spec-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px}
+.spec-row:last-child{border-bottom:none}
+.spec-key{color:var(--muted)}
+.spec-val{font-weight:500;color:var(--text)}
+.verdict-score{text-align:center;padding:8px 0 16px}
+.verdict-num{font-size:52px;font-weight:600;color:var(--forest);line-height:1}
+.verdict-label{font-size:12px;color:var(--muted);margin-top:4px}
+.score-bars{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.score-bar-row{display:flex;align-items:center;gap:8px;font-size:11px}
+.score-bar-label{width:90px;color:var(--muted);flex-shrink:0}
+.score-bar-track{flex:1;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.score-bar-fill{height:100%;background:var(--mid);border-radius:2px}
+.score-bar-val{width:22px;text-align:right;color:var(--text);font-weight:500}
+.sidebar-cta{background:var(--forest);color:#fff;display:block;text-align:center;padding:13px;border-radius:8px;font-weight:500;font-size:14px;text-decoration:none;transition:background .2s;margin-top:8px}
+.sidebar-cta:hover{background:var(--mid)}
+.sidebar-cta small{display:block;font-size:11px;opacity:.6;font-weight:400;margin-top:2px}
+
+/* COMPARISON TABLE */
+.comparison-section{background:var(--off-white);border-top:1px solid var(--border)}
+.table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border);background:#fff}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead{background:var(--forest)}
+thead th{padding:14px 16px;text-align:left;color:rgba(255,255,255,.75);font-weight:500;font-size:12px;letter-spacing:.04em;white-space:nowrap}
+thead th:first-child{color:#fff;font-weight:600}
+thead th.best-col{color:var(--accent)}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:#f9fdfb}
+tbody td{padding:13px 16px;vertical-align:middle;color:var(--text)}
+tbody td:first-child{font-weight:500;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.04em;white-space:nowrap}
+.td-product{font-weight:600!important;color:var(--text)!important;font-size:14px!important;text-transform:none!important;letter-spacing:0!important}
+.td-best{background:#f0fdf7}
+.chip{display:inline-block;padding:3px 8px;border-radius:4px;font-size:11px;font-weight:500}
+.chip-green{background:#dcf5ea;color:#0F6E56}
+.chip-amber{background:#fef3dd;color:#854F0B}
+.chip-red{background:#fde8e8;color:#A32D2D}
+.chip-blue{background:#e6f1fb;color:#185FA5}
+.compat-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:3px}
+.dot-y{background:#1D9E75}.dot-n{background:#E2E6E3}
+.table-legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:11px;color:var(--muted)}
+.legend-item{display:flex;align-items:center;gap:5px}
+
+/* BOTTOM CTA */
+.cta-band{background:linear-gradient(135deg,var(--forest) 0%,#0d4a38 100%);padding:64px 32px;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:500px;height:300px;background:radial-gradient(ellipse,rgba(93,202,165,.12) 0%,transparent 70%);pointer-events:none}
+.cta-band h2{font-family:var(--sg);font-size:30px;font-weight:600;color:#fff;margin-bottom:10px;letter-spacing:-.3px}
+.cta-band p{color:rgba(255,255,255,.6);font-size:15px;margin-bottom:28px}
+.cta-email{display:flex;gap:10px;max-width:400px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.cta-email input{flex:1;min-width:200px;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.08);color:#fff;font-size:14px;font-family:var(--sg);outline:none}
+.cta-email input::placeholder{color:rgba(255,255,255,.35)}
+.cta-email button{background:var(--accent);color:var(--forest);padding:12px 20px;border-radius:8px;border:none;font-weight:600;font-size:14px;cursor:pointer;font-family:var(--sg);transition:background .2s}
+.cta-email button:hover{background:#fff}
+.trust-line{margin-top:16px;font-size:12px;color:rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;gap:8px}
+.trust-line::before,.trust-line::after{content:'';display:inline-block;width:40px;height:1px;background:rgba(255,255,255,.15)}
+
+/* FOOTER */
+footer{background:var(--navy);padding:28px 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap}
+.footer-logo{font-family:var(--sg);font-weight:600;color:rgba(255,255,255,.5);font-size:14px}
+.footer-logo span{color:var(--accent)}
+.footer-links{display:flex;gap:20px}
+.footer-links a{color:rgba(255,255,255,.3);font-size:12px;text-decoration:none}
+.footer-links a:hover{color:rgba(255,255,255,.6)}
+.footer-note{font-size:11px;color:rgba(255,255,255,.2)}
+
+@media(max-width:700px){
+  .picks-grid{grid-template-columns:1fr}
+  .review-layout{grid-template-columns:1fr}
+  .hero-h1{font-size:30px}
+  .hero-stats{flex-wrap:wrap;gap:20px}
+}
+</style>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Lumi<span>vox</span></div>
+  <div class="nav-links">
+    <a href="#">Sleep Tech</a>
+    <a href="#">Smart Lighting</a>
+    <a href="#">Smart Plugs</a>
+    <a href="#">Guides</a>
+  </div>
+  <a href="#" class="nav-cta">Top Picks 2025</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-eyebrow">Smart living, clearly explained</div>
+  <h1 class="hero-h1">The home tech you <em>actually</em> need — reviewed without the noise</h1>
+  <p class="hero-sub">Lumivox cuts through the hype. Independent reviews, comparison guides, and setup tutorials for sleep trackers, smart lighting, and home automation.</p>
+  <div class="hero-actions">
+    <a href="#picks" class="btn-primary">Browse top picks →</a>
+    <a href="#comparison" class="btn-ghost">See comparison tables ↓</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">47<span class="pulse-dot"></span></div>
+      <div class="stat-label">Products reviewed</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Core categories</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Independent — no paid placements</div>
+    </div>
+  </div>
+</div>
+
+<!-- CATEGORY PILLS -->
+<div class="cat-strip">
+  <div class="cat-pills">
+    <a href="#picks" class="cat-pill active">All categories</a>
+    <a href="#review" class="cat-pill">Sleep trackers</a>
+    <a href="#" class="cat-pill">Smart bulbs</a>
+    <a href="#" class="cat-pill">Smart plugs</a>
+    <a href="#comparison" class="cat-pill">Comparison tables</a>
+    <a href="#" class="cat-pill">Setup guides</a>
+    <a href="#" class="cat-pill">Best of 2025</a>
+  </div>
+</div>
+
+<!-- TOP PICKS -->
+<section class="top-picks" id="picks">
+  <div class="section-header">
+    <div class="section-eyebrow">Top picks — May 2025</div>
+    <h2 class="section-h2">Our editors' current recommendations</h2>
+    <p class="section-sub">Updated regularly. Prices verified May 2025 — check before purchasing.</p>
+  </div>
+  <div class="picks-grid">
+    <!-- Sleep Tracker -->
+    <div class="pick-card featured">
+      <div class="pick-badge">⭐ Editor's choice — Sleep</div>
+      <div class="pick-img"><div class="pick-icon">💍</div></div>
+      <div class="pick-body">
+        <div class="pick-cat">Sleep tracker</div>
+        <div class="pick-name">Oura Ring Gen 4</div>
+        <div class="pick-price">From $349 + $5.99/mo membership</div>
+        <div class="pick-stars">★★★★★<span>4.8 · 1,200+ reviews</span></div>
+        <div class="pick-fit"><strong>Best for:</strong> Anyone who wants detailed sleep data without wearing a watch to bed</div>
+        <a href="#" class="pick-link">See full review →</a>
+      </div>
+    </div>
+    <!-- Smart Bulb -->
+    <div class="pick-card featured">
+      <div class="pick-badge">⭐ Editor's choice — Lighting</div>
+      <div class="pick-img" style="background:linear-gradient(135deg,#fff8e1,#fffde7)"><div class="pick-icon">💡</div></div>
+      <div class="pick-body">
+        <div class="pick-cat">Smart bulb</div>
+        <div class="pick-name">Philips Hue White & Color A19</div>
+        <div class="pick-price">From $44.99 per bulb</div>
+        <div class="pick-stars">★★★★★<span>4.7 · 8,000+ reviews</span></div>
+        <div class="pick-fit"><strong>Best for:</strong> Multi-room smart lighting with rock-solid reliability and wide ecosystem support</div>
+        <a href="#" class="pick-link">See full review →</a>
+      </div>
+    </div>
+    <!-- Smart Plug -->
+    <div class="pick-card featured">
+      <div class="pick-badge">⭐ Editor's choice — Smart Plugs</div>
+      <div class="pick-img" style="background:linear-gradient(135deg,#e8f4fd,#dbeafe)"><div class="pick-icon">🔌</div></div>
+      <div class="pick-body">
+        <div class="pick-cat">Smart plug</div>
+        <div class="pick-name">Kasa Smart EP25 (Matter)</div>
+        <div class="pick-price">From $17.99 per plug</div>
+        <div class="pick-stars">★★★★½<span>4.6 · 5,400+ reviews</span></div>
+        <div class="pick-fit"><strong>Best for:</strong> Budget-conscious buyers who want Matter compatibility and energy monitoring</div>
+        <a href="#" class="pick-link">See full review →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTICLE / REVIEW -->
+<section class="review-section" id="review">
+  <div class="review-layout">
+    <div class="review-body">
+      <span class="review-tag">📖 In-depth review</span>
+      <h2 class="review-h2">Oura Ring Gen 4 — the most accurate sleep tracker we've tested</h2>
+      <div class="review-meta">
+        <span class="review-author">By Lumivox Editors · Updated May 2025</span>
+        <span class="review-score">9.1 / 10</span>
+        <span style="font-size:12px;color:var(--muted)">Setup: Beginner-friendly</span>
+      </div>
+
+      <p>Most sleep trackers make you choose: accuracy or comfort. The Oura Ring Gen 4 largely sidesteps that trade-off. It sits on your finger, not your wrist, which means no screen to ignore and no charging interruption at 2am. After six weeks of parallel testing against a Whoop 4.0 and Apple Watch Ultra 2, the Oura consistently produced the most granular and actionable sleep data of the three.</p>
+
+      <p>The Gen 4 upgrade brings a new sensor array — infrared LEDs and a photodetector positioned to capture pulse from multiple points on the finger. The practical result is improved heart-rate accuracy during restless sleep, which is exactly when competing wrist-based trackers tend to lose signal quality.</p>
+
+      <h3>What it actually tells you each morning</h3>
+      <p>The Oura app surfaces three scores: Sleep, Readiness, and Activity. Sleep breaks down into Total Sleep, REM, Deep, and Light stages with a timeline. Readiness aggregates HRV, resting heart rate, body temperature deviation, and previous night's sleep into a single number that actually correlates, in our testing, with how alert you feel. Skin temperature sensing — flagging deviations as small as 0.1°C — is genuinely useful for catching illness before symptoms arrive.</p>
+
+      <h3>The membership question</h3>
+      <p>The ring costs $349–$549 depending on finish, plus a $5.99/month membership for full data access. You get six months free. After that, without a membership, the app shows only a limited summary. This is the most legitimate criticism of the product — though for anyone serious about sleep tracking, the membership cost is comparable to a single GP appointment.</p>
+
+      <div class="pro-con">
+        <div class="pro-box">
+          <h4>Pros</h4>
+          <ul>
+            <li>Most comfortable 24/7 wearable we've tested</li>
+            <li>Excellent HRV and temperature accuracy</li>
+            <li>7-day battery (real-world average)</li>
+            <li>No screen — no light disruption at night</li>
+            <li>Women's health cycle tracking built in</li>
+          </ul>
+        </div>
+        <div class="con-box">
+          <h4>Cons</h4>
+          <ul>
+            <li>$5.99/month after 6-month free trial</li>
+            <li>No GPS or display</li>
+            <li>Ring sizing needs a 2-week kit trial</li>
+            <li>Not ideal if you dislike wearing rings</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="font-size:14px;color:var(--muted);border-top:1px solid var(--border);padding-top:16px;margin-top:8px">Lumivox earns a commission on purchases made through our links at no cost to you. We never accept payment to influence our recommendations. <a href="#" style="color:var(--mid)">Read our editorial policy →</a></p>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="review-sidebar">
+      <div class="sidebar-card">
+        <div class="verdict-score">
+          <div class="verdict-num">9.1</div>
+          <div class="verdict-label">Lumivox score</div>
+        </div>
+        <div class="score-bars">
+          <div class="score-bar-row">
+            <div class="score-bar-label">Accuracy</div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width:95%"></div></div>
+            <div class="score-bar-val">9.5</div>
+          </div>
+          <div class="score-bar-row">
+            <div class="score-bar-label">Comfort</div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width:92%"></div></div>
+            <div class="score-bar-val">9.2</div>
+          </div>
+          <div class="score-bar-row">
+            <div class="score-bar-label">App quality</div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width:88%"></div></div>
+            <div class="score-bar-val">8.8</div>
+          </div>
+          <div class="score-bar-row">
+            <div class="score-bar-label">Battery life</div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width:90%"></div></div>
+            <div class="score-bar-val">9.0</div>
+          </div>
+          <div class="score-bar-row">
+            <div class="score-bar-label">Value</div>
+            <div class="score-bar-track"><div class="score-bar-fill" style="width:78%"></div></div>
+            <div class="score-bar-val">7.8</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>Quick specs</h4>
+        <div class="spec-row"><span class="spec-key">Price</span><span class="spec-val">$349–$549</span></div>
+        <div class="spec-row"><span class="spec-key">Subscription</span><span class="spec-val">$5.99/mo</span></div>
+        <div class="spec-row"><span class="spec-key">Battery</span><span class="spec-val">Up to 8 days</span></div>
+        <div class="spec-row"><span class="spec-key">Water resistance</span><span class="spec-val">100m</span></div>
+        <div class="spec-row"><span class="spec-key">Compatibility</span><span class="spec-val">iOS + Android</span></div>
+        <div class="spec-row"><span class="spec-key">Setup difficulty</span><span class="spec-val">Beginner</span></div>
+      </div>
+
+      <div class="sidebar-card" style="background:var(--soft);border-color:#b6e8d4">
+        <h4 style="color:#0F6E56">Best for</h4>
+        <p style="font-size:13px;color:var(--forest);line-height:1.6">People who sleep in varying positions, those who dislike wrist wearables, and anyone tracking menstrual or recovery cycles alongside sleep.</p>
+        <h4 style="color:#854F0B;margin-top:12px">Avoid if</h4>
+        <p style="font-size:13px;color:#5a3810;line-height:1.6">You want built-in GPS, a display for notifications, or a one-time purchase with no ongoing subscription.</p>
+      </div>
+
+      <a href="#" class="sidebar-cta">Check current price<small>via lumivox.one/go/oura-ring-4</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="comparison-section" id="comparison">
+  <div class="section-header">
+    <div class="section-eyebrow">Comparison guide</div>
+    <h2 class="section-h2">Sleep trackers compared — 2025</h2>
+    <p class="section-sub">Side-by-side across accuracy, comfort, subscription cost, and ecosystem. Prices verified May 2025.</p>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th class="best-col">★ Oura Ring 4</th>
+          <th>Whoop 4.0</th>
+          <th>Garmin Vívosmart 5</th>
+          <th>Fitbit Charge 6</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Price (device)</td>
+          <td class="td-best">$349–$549</td>
+          <td>Free w/ sub</td>
+          <td>$149.99</td>
+          <td>$159.95</td>
+        </tr>
+        <tr>
+          <td>Subscription</td>
+          <td class="td-best">$5.99/mo</td>
+          <td>$30/mo</td>
+          <td>None</td>
+          <td>$10/mo (optional)</td>
+        </tr>
+        <tr>
+          <td>Form factor</td>
+          <td class="td-best">Ring</td>
+          <td>Band</td>
+          <td>Band</td>
+          <td>Band</td>
+        </tr>
+        <tr>
+          <td>Battery life</td>
+          <td class="td-best"><span class="chip chip-green">Up to 8 days</span></td>
+          <td><span class="chip chip-green">4–5 days</span></td>
+          <td><span class="chip chip-green">Up to 7 days</span></td>
+          <td><span class="chip chip-amber">Up to 7 days</span></td>
+        </tr>
+        <tr>
+          <td>Sleep staging</td>
+          <td class="td-best"><span class="chip chip-green">✓ Detailed</span></td>
+          <td><span class="chip chip-green">✓ Detailed</span></td>
+          <td><span class="chip chip-amber">Basic</span></td>
+          <td><span class="chip chip-amber">Basic</span></td>
+        </tr>
+        <tr>
+          <td>HRV tracking</td>
+          <td class="td-best"><span class="chip chip-green">✓ Continuous</span></td>
+          <td><span class="chip chip-green">✓ Continuous</span></td>
+          <td><span class="chip chip-amber">Overnight only</span></td>
+          <td><span class="chip chip-red">✗ No</span></td>
+        </tr>
+        <tr>
+          <td>Temp sensing</td>
+          <td class="td-best"><span class="chip chip-green">✓ ±0.1°C</span></td>
+          <td><span class="chip chip-green">✓ Skin temp</span></td>
+          <td><span class="chip chip-red">✗ No</span></td>
+          <td><span class="chip chip-green">✓ Skin temp</span></td>
+        </tr>
+        <tr>
+          <td>Display</td>
+          <td class="td-best"><span class="chip chip-red">None</span></td>
+          <td><span class="chip chip-red">None</span></td>
+          <td><span class="chip chip-green">OLED screen</span></td>
+          <td><span class="chip chip-green">AMOLED</span></td>
+        </tr>
+        <tr>
+          <td>GPS</td>
+          <td class="td-best"><span class="chip chip-red">✗ No</span></td>
+          <td><span class="chip chip-red">✗ No</span></td>
+          <td><span class="chip chip-green">✓ Connected</span></td>
+          <td><span class="chip chip-green">✓ Built-in</span></td>
+        </tr>
+        <tr>
+          <td>Lumivox score</td>
+          <td class="td-best" style="font-weight:700;color:var(--forest)">9.1 / 10</td>
+          <td>8.4 / 10</td>
+          <td>7.9 / 10</td>
+          <td>7.6 / 10</td>
+        </tr>
+        <tr>
+          <td>Setup level</td>
+          <td class="td-best"><span class="chip chip-green">Beginner</span></td>
+          <td><span class="chip chip-green">Beginner</span></td>
+          <td><span class="chip chip-green">Beginner</span></td>
+          <td><span class="chip chip-green">Beginner</span></td>
+        </tr>
+        <tr>
+          <td>Buy link</td>
+          <td class="td-best"><a href="#" style="color:var(--mid);font-size:12px;font-weight:500">lumivox.one/go/oura-ring-4</a></td>
+          <td><a href="#" style="color:var(--mid);font-size:12px;font-weight:500">lumivox.one/go/whoop-4</a></td>
+          <td><a href="#" style="color:var(--mid);font-size:12px;font-weight:500">lumivox.one/go/vivosmart-5</a></td>
+          <td><a href="#" style="color:var(--mid);font-size:12px;font-weight:500">lumivox.one/go/fitbit-charge-6</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-legend">
+    <span class="legend-item"><span class="chip chip-green" style="padding:2px 6px">Green</span> Strong / recommended</span>
+    <span class="legend-item"><span class="chip chip-amber" style="padding:2px 6px">Amber</span> Partial / limited</span>
+    <span class="legend-item"><span class="chip chip-red" style="padding:2px 6px">Red</span> Not available</span>
+    <span style="margin-left:auto;font-size:11px">Prices verified May 2025 — re-check before publishing</span>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <h2>Stay ahead of smart home tech</h2>
+  <p>New reviews, buying guides, and setup tutorials — no spam, unsubscribe anytime.</p>
+  <div class="cta-email">
+    <input type="email" placeholder="your@email.com">
+    <button>Get updates</button>
+  </div>
+  <div class="trust-line">No paid placements · Independent editorial · Lumivox.one</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Lumi<span>vox</span></div>
+  <div class="footer-links">
+    <a href="#">Editorial policy</a>
+    <a href="#">Affiliate disclosure</a>
+    <a href="#">Privacy</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="footer-note">© 2025 Lumivox. Prices verified May 2025.</div>
+</footer>
