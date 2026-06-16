@@ -164,11 +164,11 @@ nav: home
       </fieldset>
 
       <div class="fit-check-actions">
-        <button class="btn btn-dark" type="submit" data-track-category="homepage" data-track-action="fit_check_completed" data-track-label="submit">See my fit</button>
+        <button class="btn btn-dark" type="button" data-fit-submit data-track-category="homepage" data-track-action="fit_check_completed" data-track-label="submit">See my fit</button>
         <a class="fit-fallback" href="{{ '/who-lumivox-is-for/' | relative_url }}">No JavaScript? See who Lumivox is for.</a>
       </div>
 
-      <div class="fit-result" data-fit-result role="status" aria-live="polite" hidden></div>
+      <div id="fit-result" class="fit-result" data-fit-result role="status" aria-live="polite" hidden></div>
     </form>
   </div>
 </section>
