@@ -53,7 +53,14 @@ function parsePage(source) {
   for (const line of match[1].split(/\r?\n/)) {
     const separator = line.indexOf(":");
     if (separator === -1) continue;
-    page[line.slice(0, separator).trim()] = line.slice(separator + 1).trim();
+    let value = line.slice(separator + 1).trim();
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      value = value.slice(1, -1);
+    }
+    page[line.slice(0, separator).trim()] = value;
   }
   return { page, content: match[2] };
 }
