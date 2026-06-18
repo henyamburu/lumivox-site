@@ -1,2 +1,15 @@
 node_modules/
 npm-debug.log*
+
+dist
+build
+.cache
+.vite
+
+.env
+.env.*
+!.env.example
+
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sleep Tracker Options | Lumivox</title>
+  <meta name="description" content="Choose a Fitbit Inspire 3 retailer option or return to the Lumivox Sleep System guide.">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #232020;
+      --muted: #595450;
+      --line: #e7e1d7;
+      --bg: #faf8f3;
+      --card: #ffffff;
+      --accent: #1e6e60;
+      --shadow: 0 2px 4px rgba(40,33,28,.05), 0 22px 48px -24px rgba(40,33,28,.22);
+      --cta: linear-gradient(180deg, #237b6c, #1a6055);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      padding: 24px;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    main {
+      width: min(100%, 680px);
+      padding: clamp(24px, 6vw, 48px);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+    .pill {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: #1e6e60;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0 0 14px; font-size: clamp(32px, 7vw, 48px); line-height: 1.08; }
+    p { margin: 0; color: var(--muted); line-height: 1.65; }
+    .options { display: grid; gap: 14px; margin: 28px 0; }
+    .option {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .05);
+    }
+    .option h2 { margin: 0 0 6px; font-size: 18px; }
+    .option p { margin-bottom: 14px; font-size: 14px; }
+    .button {
+      display: inline-flex;
+      min-height: 46px;
+      padding: 0 18px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: var(--cta);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .button.secondary { background: var(--cta); }
+    .button.outline { border: 1px solid var(--line); background: rgba(255, 255, 255, .05); color: var(--ink); }
+    .button:focus-visible { outline:2px solid #1e6e60; outline-offset:4px; }
+    .small { font-size: 13px; }
+    @media (max-width: 480px) {
+      body { padding: 14px; }
+      main { border-radius: 18px; }
+      .button { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <span class="pill">Lumivox product options</span>
+    <h1>Sleep Tracker Options</h1>
+    <p>Fitbit Inspire 3 availability varies by country. If Google Store does not open in your region, use the retailer search option below or return to the Sleep System guide before buying.</p>
+
+    <div class="options">
+      <section class="option">
+        <h2>Google Store</h2>
+        <p>Use this option if the Google Store supports your country.</p>
+        <a class="button" href="/go/sleep-tracker-google-store/" data-track="affiliate_click" data-track-id="sleep_tracker_google_store" data-category="affiliate" data-label="Sleep tracker options - Google Store">Continue to Google Store</a>
+      </section>
+
+      <section class="option">
+        <h2>Amazon availability</h2>
+        <p>Search your retailer region for current listings, shipping options, and pricing.</p>
+        <a class="button secondary" href="/go/sleep-tracker-amazon/" data-track="affiliate_click" data-track-id="sleep_tracker_amazon_search" data-category="affiliate" data-label="Sleep tracker options - Amazon search">Check Amazon Availability</a>
+      </section>
+
+      <section class="option">
+        <h2>Other retailers</h2>
+        <p>Search for local retailer options if Google Store and Amazon do not serve your region.</p>
+        <a class="button secondary" href="/go/sleep-tracker-retailers/" data-track="affiliate_click" data-track-id="sleep_tracker_retailer_search" data-category="affiliate" data-label="Sleep tracker options - Retailer search">Find Other Retailers</a>
+      </section>
+
+      <section class="option">
+        <h2>Review the setup first</h2>
+        <p>Return to the Lumivox guide to see how the tracker fits with lights and a smart plug.</p>
+        <a class="button outline" href="/sleep-system/" data-track="cta_click" data-track-id="sleep_tracker_return_to_guide" data-category="cta" data-label="Sleep tracker options - Return to Sleep System guide">Return to Sleep System Guide</a>
+      </section>
+    </div>
+
+    <p class="small">Lumivox may earn a commission from qualifying purchases when approved affiliate links are used. Product availability, price, and shipping options can vary by country and retailer.</p>
+  </main>
+
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"b942e39c3ad64cacb2e4cc13e9fcd9ae"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+  <script src="/assets/js/analytics.js" defer></script>
+</body>
+</html>
