@@ -1,0 +1,32 @@
+{
+  "name": "lumivox-dev",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "remoteUser": "node",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "forwardPorts": [3000, 4173, 5173, 8000],
+  "portsAttributes": {
+    "3000": {
+      "label": "App"
+    },
+    "4173": {
+      "label": "Preview"
+    },
+    "5173": {
+      "label": "Vite"
+    },
+    "8000": {
+      "label": "Static Preview"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "bradlc.vscode-tailwindcss",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "postCreateCommand": "bash -lc 'if [ -f package-lock.json ]; then npm ci; elif [ -f package.json ]; then npm install; else echo \"No package.json found. Static preview mode available with npx serve.\"; fi'"
+}
