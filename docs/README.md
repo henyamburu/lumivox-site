@@ -30,6 +30,27 @@ For tracking and affiliate readiness, also read:
 - `AFFILIATE_TRACKING.md`
 - `RELEASE_CHECKLIST.md`
 
+## Clean Daily Workflow
+
+Use this as the default local development startup routine:
+
+```powershell
+cd C:\Dev\Trusted\lumivox.one
+code .
+```
+
+Then in VS Code, run:
+
+```text
+Dev Containers: Reopen in Container
+```
+
+Then inside the container terminal:
+
+```bash
+npm run dev
+```
+
 ## Documentation Maintenance Rule
 
 Whenever Codex completes a meaningful task, it should update the relevant documentation file instead of relying on chat memory.

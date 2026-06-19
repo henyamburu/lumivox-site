@@ -182,6 +182,6 @@ Validation already performed locally:
 Known follow-ups:
 
 - Browser screenshot QA was not completed because the in-app browser/node sandbox failed during the prior pass.
-- There is no `build` script in `package.json`; use the local preview server for static render validation unless the deployment workflow changes.
+- `npm run build` renders the static site into `dist/` using `tools/build-static-site.js`.
 - The Article Flow currently links bulb guidance to the starter setup anchor because there is no dedicated Govee vs Wyze page route yet.
 - If this homepage theme is backed out later, use the checkpoint tag above as the last known pre-homepage-redesign state while preserving any later content additions manually.

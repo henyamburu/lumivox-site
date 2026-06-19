@@ -26,6 +26,48 @@ Use this format:
 
 ---
 
+## 2026-06-19 - Add Static Build Script
+
+**Type:** Build / Docs
+
+**Summary:**
+- Added `npm run build` for rendering the static site to `dist/`.
+- Added `tools/build-static-site.js` using the same lightweight rendering assumptions as the local preview server.
+- Updated the project state note that previously said no build script existed.
+
+**Files changed:**
+- `package.json`
+- `tools/build-static-site.js`
+- `docs/PROJECT_STATE.md`
+- `docs/DEV_LOG.md`
+
+**Checks performed:**
+- `node --check tools/build-static-site.js`
+- `node --check tools/local-preview-server.js`
+- `npm run build`
+- `rg -n "\{\{|\{%" dist`
+
+**Risks / follow-ups:**
+- The static builder duplicates the preview server's route and rendering logic; keep them aligned if new public routes or template features are added.
+
+## 2026-06-18 - Document Daily Dev Workflow
+
+**Type:** Docs
+
+**Summary:**
+- Added the clean daily Windows + VS Code Dev Container startup workflow to the root README and docs README.
+
+**Files changed:**
+- `README.md`
+- `docs/README.md`
+- `docs/DEV_LOG.md`
+
+**Checks performed:**
+- Reviewed the existing README and docs README placement before editing.
+
+**Risks / follow-ups:**
+- None.
+
 ## 2026-06-15 - Homepage Hook Flow Refinement
 
 **Type:** Homepage / Docs
