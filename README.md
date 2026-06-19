@@ -8,6 +8,27 @@ Live domain:
 https://lumivox.one
 ```
 
+## Clean daily workflow
+
+On Windows, start from the trusted local repo:
+
+```powershell
+cd C:\Dev\Trusted\lumivox.one
+code .
+```
+
+Then in VS Code:
+
+```text
+Dev Containers: Reopen in Container
+```
+
+Then inside the container terminal:
+
+```bash
+npm run dev
+```
+
 ## Current site structure
 
 ```text

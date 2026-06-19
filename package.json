@@ -4,6 +4,7 @@
   "private": true,
   "description": "Static local development server for the Lumivox website.",
   "scripts": {
+    "build": "node tools/build-static-site.js",
     "dev": "node tools/local-preview-server.js",
     "start": "npm run dev",
     "preview": "node tools/local-preview-server.js",
