@@ -34,6 +34,22 @@ const staticPaths = [
   "style.css",
 ];
 
+const excludedStaticExtensions = new Set([
+  ".doc",
+  ".docx",
+  ".md",
+]);
+
+const excludedStaticNames = new Set([
+  ".git",
+  "dist",
+  "docs",
+  "node_modules",
+  "package-lock.json",
+  "package.json",
+  "tools",
+]);
+
 function read(relativePath) {
   return fs.readFileSync(path.join(root, relativePath), "utf8");
 }
@@ -130,7 +146,22 @@ function copyStaticPath(relativePath) {
   if (!fs.existsSync(source)) return;
 
   const destination = path.join(outputDir, relativePath);
-  fs.cpSync(source, destination, { recursive: true });
+  fs.cpSync(source, destination, {
+    filter: shouldCopyStaticPath,
+    recursive: true,
+  });
+}
+
+function shouldCopyStaticPath(source) {
+  const name = path.basename(source);
+  const relativePath = path.relative(root, source);
+  const extension = path.extname(source).toLowerCase();
+
+  if (!relativePath) return true;
+  if (excludedStaticNames.has(name)) return false;
+  if (excludedStaticExtensions.has(extension)) return false;
+
+  return true;
 }
 
 function writeFile(filePath, content) {
