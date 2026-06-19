@@ -26,6 +26,27 @@ Use this format:
 
 ---
 
+## 2026-06-19 - Tighten Cloudflare Build Output
+
+**Type:** Build / Docs
+
+**Summary:**
+- Confirmed `tools/build-static-site.js` exists and `package.json` keeps `npm run build`.
+- Updated the static builder to filter markdown/planning files, package files, tools, docs, `.git`, `node_modules`, and nested `dist` output from the published `dist/` folder.
+
+**Files changed:**
+- `tools/build-static-site.js`
+- `docs/DEV_LOG.md`
+
+**Checks performed:**
+- `node --check tools/build-static-site.js`
+- `npm run build`
+- Verified `dist/` contains no markdown, docs, tools, package files, `.git`, or `node_modules` paths.
+- Verified no leftover `{{` or `{%` template tags in `dist/`.
+
+**Risks / follow-ups:**
+- Cloudflare Pages should use build command `npm run build` and build output directory `dist`.
+
 ## 2026-06-19 - Add Static Build Script
 
 **Type:** Build / Docs
